@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const User = require('../models/UserModel');
-const userController = require('../controllers/UserController');
+const userController = require('../controllers/profileController');
 
 // id params
 router.param('id', async (req, res, next, id) => {
@@ -19,6 +19,8 @@ router.param('id', async (req, res, next, id) => {
     }
 });
 
+
+
 // get all users
 router.get('/', userController.fetchAllUsers);
 
@@ -29,7 +31,7 @@ router.get('/:id', userController.getUser);
 router.put('/:id', userController.updateUser);
 
 // create a user
-router.post('/', userController.createUser);
+// router.post('/', userController.createUser);
 
 // delete a user
 router.delete('/:id', userController.deleteUser);
@@ -39,8 +41,3 @@ module.exports = router;
 
 
 
-
-
-
-
-module.exports = router;
