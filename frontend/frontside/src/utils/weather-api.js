@@ -17,9 +17,15 @@ const getWeather = async () => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                "fields": [
-                    "temperature"
-                  ]
+                "location": {
+                    "type": "Point",
+                    "coordinates": [42.3478, -71.0466]
+                },
+                "fields": ["temperatureAvg"],
+                "units": "metric",
+                "timesteps": ["1d"],
+                "startTime": "2024-01-01T00:00:00Z",
+                "endTime": "2024-01-02T00:00:00Z"
             })
         });
         const data = await response.json();
