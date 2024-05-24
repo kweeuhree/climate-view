@@ -8,7 +8,7 @@ import viteLogo from '/vite.svg';
 //components
 import NavBar from './components/NavBar&Footer/NavBar';
 import Footer from './components/NavBar&Footer/Footer';
-import UsefulLink from './components/UsefulLink';
+import UsefulLink from './components/UsefulLink/UsefulLink';
 import CommentSection from './components/CommentSection';
 //pages
 import HomePage from './pages/HomePage/HomePage';
