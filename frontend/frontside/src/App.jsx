@@ -1,20 +1,25 @@
 import { useState, useEffect } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import { Route, Routes } from 'react-router-dom';
 // import { getWeather } from './utils/weather-api';
 import './App.css';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
+//logos
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+//components
+import NavBar from './components/NavBar&Footer/NavBar';
+import Footer from './components/NavBar&Footer/Footer';
 import UsefulLink from './components/UsefulLink';
-import { Route, Routes } from 'react-router-dom';
 import CommentSection from './components/CommentSection';
-import HomePage from './pages/HomePage';
+//pages
+import HomePage from './pages/HomePage/HomePage';
 import HistoryPage from './pages/HistoryPage';
 import ImpactPage from './pages/ImpactPage';
 
+
+
 function App() {
   const [weather, setWeather] = useState(null);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false); // set logged in status to false
 
   // useEffect(() => {
   //   const fetchWeather = async () => {
