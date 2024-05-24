@@ -8,6 +8,8 @@ const CommentSection = ({loggedIn}) => {
     postedBy: null  
   })
 
+
+
   return (
     <section className='comment-section'>
         {
