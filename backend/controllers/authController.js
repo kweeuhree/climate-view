@@ -55,7 +55,7 @@ const signup = async (req, res) => {
         // allows only browser and server to read
         sameSite: "lax"
       });
-      res.sendStatus(200);
+      res.json(token);
       // Cookie - data that our servers will send to browser and store in cache.
       // Cookies save information about a user's session
       // by default express doesnt read cookies off request body so u need an npm package :cookie-parser

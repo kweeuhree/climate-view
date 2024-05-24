@@ -1,9 +1,14 @@
 import React from 'react';
 import './HomePage.css';
 
-const HomePage = () => {
+const HomePage = ({loggedIn}) => {
   return (
-    <div>HomePage</div>
+    <>
+    <section className="section-home">
+      HomePage
+    </section>
+    <CommentSection loggedIn={loggedIn}/>
+    </>
   )
 }
 

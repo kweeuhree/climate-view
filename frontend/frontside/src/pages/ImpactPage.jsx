@@ -1,8 +1,11 @@
 import React from 'react'
 
-const ImpactPage = () => {
+const ImpactPage = ({loggedIn}) => {
   return (
-    <div>ImpactPage</div>
+   <>
+    <section className='impact-section'>ImpactPage</section>
+    <CommentSection loggedIn={loggedIn}/>
+   </>
   )
 }
 

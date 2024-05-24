@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Comment = ({comment}) => {
 
   const [formData, setFormData] = useState({
     body: ''
   })
+
+  function handleChange(event) {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value
+    })
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -27,14 +34,23 @@ const Comment = ({comment}) => {
   }
 
   return (
-    <div className='comment'>
-    {comment ? comment : 
-        <Form 
-          name={body} 
-          formData={formData} 
-          setFormData={setFormData}
-          handleSubmit={handleSubmit}
-        />}
+    <div className='comment-container'>
+
+    { comment.body ? 
+    (
+       <div className="comment">{comment.body}</div>
+    ) : ( 
+      <form onSubmit={handleSubmit}>
+            <textarea 
+                type='text' 
+                name="body"
+                onChange={handleChange} 
+                value={formData.body}
+            />
+            <button type='submit'>Submit</button>
+        </form>
+    )}
+
     </div>
   )
 }

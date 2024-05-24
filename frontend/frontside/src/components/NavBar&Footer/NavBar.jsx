@@ -18,10 +18,16 @@ const NavBar = ({loggedIn}) => {
     )
   }
 
+
   const signlog = () => {
     return (
      <div className="signlog">
-      <Link to="/signup">sign up</Link> / <Link to="/login">log in</Link>
+      <Link to={'/sign-up'}>
+        sign up
+      </Link> / <Link
+        to={'/log-in'}>
+          log in
+        </Link>
      </div>
     )
   }

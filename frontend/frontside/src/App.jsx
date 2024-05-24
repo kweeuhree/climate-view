@@ -14,6 +14,9 @@ import CommentSection from './components/CommentSection';
 import HomePage from './pages/HomePage/HomePage';
 import HistoryPage from './pages/HistoryPage';
 import ImpactPage from './pages/ImpactPage';
+import SignUpPage from './pages/SignUpPage';
+import LogInPage from './pages/LogInPage';
+import ProfilePage from './pages/ProfilePage';
 
 
 
@@ -38,12 +41,13 @@ function App() {
 
         <Routes>
           <Route path="/" element={<HomePage />}/>
-          <Route path='/dashboard' element={<HomePage />} />
-          <Route path='/history' element={<HistoryPage />} />
-          <Route path='/impact' element={<ImpactPage />} />
+          <Route path='/dashboard' element={<HomePage loggedIn={loggedIn}/>} />
+          <Route path='/history' element={<HistoryPage loggedIn={loggedIn}/>} />
+          <Route path='/impact' element={<ImpactPage loggedIn={loggedIn}/>} />
+          <Route path="/sign-up" element={<SignUpPage />} />
+          <Route path="/log-in" element={<LogInPage setLoggedIn={setLoggedIn}/>} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
-
-      <CommentSection loggedIn={loggedIn}/>
 
       <Footer loggedIn={loggedIn} />
     </>

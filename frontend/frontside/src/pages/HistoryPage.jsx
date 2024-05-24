@@ -1,8 +1,11 @@
 import React from 'react'
 
-const HistoryPage = () => {
+const HistoryPage = ({loggedIn}) => {
   return (
-    <div>HistoryPage</div>
+    <>
+    <section className='history-section'>HistoryPage</section>
+    <CommentSection loggedIn={loggedIn}/>
+    </>
   )
 }
 

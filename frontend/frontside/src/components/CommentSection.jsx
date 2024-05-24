@@ -13,7 +13,7 @@ const CommentSection = ({loggedIn}) => {
   return (
     <section className='comment-section'>
         {
-        loggedIn ? 
+        loggedIn === true ? 
           <Comment comment={comment} setComment={setComment}/> 
           : 
           'log in to leave a comment'
