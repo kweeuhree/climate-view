@@ -46,7 +46,7 @@ function App() {
           <Route path='/impact' element={<ImpactPage loggedIn={loggedIn}/>} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/log-in" element={<LogInPage setLoggedIn={setLoggedIn}/>} />
-          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/profile" element={<ProfilePage loggedIn={loggedIn}/>} />
         </Routes>
 
       <Footer loggedIn={loggedIn} />

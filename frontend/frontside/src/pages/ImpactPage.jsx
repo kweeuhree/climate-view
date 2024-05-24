@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import CommentSection from '../components/CommentSection';
 
 const ImpactPage = ({loggedIn}) => {
   return (
