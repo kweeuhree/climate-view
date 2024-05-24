@@ -7,9 +7,11 @@ import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import UsefulLink from './components/UsefulLink';
 import { Router, Routes } from 'react-router-dom';
+import CommentSection from './components/CommentSection';
 
 function App() {
   const [weather, setWeather] = useState(null);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   // useEffect(() => {
   //   const fetchWeather = async () => {
@@ -24,13 +26,15 @@ function App() {
 
     <UsefulLink />
 
-      <NavBar />
+      <NavBar loggedIn={loggedIn}/>
 
         <Routes>
 
         </Routes>
 
-      <Footer />
+      <CommentSection loggedIn={loggedIn}/>
+
+      <Footer loggedIn={loggedIn} />
     </>
   )
 }
