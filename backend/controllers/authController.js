@@ -44,7 +44,7 @@ const signup = async (req, res) => {
       console.log(exp);
       // ----milisec: ---> 2sec- imin-1day-30days
       // setting an expiration date for token(ie:30days)
-      const token = jwt.sign({ sub: user._id, exp }, process.env.SECRET);
+      const token = jwt.sign({ sub: user._id, exp, user: user}, process.env.SECRET);
       console.log("Token: ", token);
   
       // -----Cookie
@@ -55,7 +55,7 @@ const signup = async (req, res) => {
         // allows only browser and server to read
         sameSite: "lax"
       });
-      res.json(token);
+      res.json({user});
       // Cookie - data that our servers will send to browser and store in cache.
       // Cookies save information about a user's session
       // by default express doesnt read cookies off request body so u need an npm package :cookie-parser

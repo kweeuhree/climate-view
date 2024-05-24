@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const SignUpPage = ({loggedIn}) => {
+const SignUpPage = () => {
 
     const [formData, setFormData] = useState({
         name: '',
@@ -28,7 +28,7 @@ const SignUpPage = ({loggedIn}) => {
             console.log(data, 'handle submit inside create form');
     
             //update to trigger a render
-            setSingupFormData({name:'', email: '', password: ''});
+            setFormData({name:'', email: '', password: ''});
     
         } catch (error) {
             console.log(error, 'errror inside handle submit');

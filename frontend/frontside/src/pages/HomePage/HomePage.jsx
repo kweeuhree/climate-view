@@ -2,13 +2,13 @@ import React from 'react';
 import './HomePage.css';
 import CommentSection from '../../components/CommentSection';
 
-const HomePage = ({loggedIn}) => {
+const HomePage = ({loggedIn, userId}) => {
   return (
     <>
     <section className="section-home">
       HomePage
     </section>
-    <CommentSection loggedIn={loggedIn}/>
+    <CommentSection loggedIn={loggedIn} userId={userId}/>
     </>
   )
 }

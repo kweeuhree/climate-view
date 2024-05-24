@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 
-const Comment = ({comment}) => {
+const Comment = ({comment, setComment, userId}) => {
 
   const [formData, setFormData] = useState({
-    body: ''
+    body: '',
+    userId: userId
   })
 
   function handleChange(event) {
@@ -26,7 +27,7 @@ const Comment = ({comment}) => {
         console.log(data, 'handle submit inside create form');
 
         //update to trigger a render
-        setFormData((prevComment) => [...prevComment, data]);
+        setComment((prevComment) => [...prevComment, data]);
         setFormData({body:''});
     } catch (error) {
         console.log(error, 'errror inside handle submit');

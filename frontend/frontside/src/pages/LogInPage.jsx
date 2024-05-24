@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-const LogInPage = ({setLoggedIn}) => {
+const LogInPage = ({setLoggedIn, loggedIn, setUserId}) => {
   const navigate = useNavigate();
-
 
   const [formData, setFormData] = useState({
     email: '',
@@ -28,14 +27,16 @@ const LogInPage = ({setLoggedIn}) => {
       });
 
         const data = await response.json();
-        console.log(data, 'handle submit inside create form');
+        console.log(data, 'handle submit inside LogIn Page');
 
         //update to trigger a render
+        setUserId(data.user._id)
         setLoggedIn(true);
+        console.log(loggedIn, 'userId, ', data.user._id);
         setFormData({email: '', password: ''});
         navigate('/profile');
     } catch (error) {
-        console.log(error, 'errror inside handle submit');
+        console.log(error, 'error inside handle submit');
     }
   }
 

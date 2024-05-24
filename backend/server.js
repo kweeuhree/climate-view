@@ -4,6 +4,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const cookieParser = require('cookie-parser');
+const requireAuth = require("./middleware/requireAuth")
 
 const connectToDb = require('./config/connectToDb');
 const cors = require('cors');

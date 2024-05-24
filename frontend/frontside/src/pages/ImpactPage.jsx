@@ -1,11 +1,11 @@
 import React from 'react';
 import CommentSection from '../components/CommentSection';
 
-const ImpactPage = ({loggedIn}) => {
+const ImpactPage = ({loggedIn, userId}) => {
   return (
    <>
     <section className='impact-section'>ImpactPage</section>
-    <CommentSection loggedIn={loggedIn}/>
+    <CommentSection userId={userId} loggedIn={loggedIn}/>
    </>
   )
 }

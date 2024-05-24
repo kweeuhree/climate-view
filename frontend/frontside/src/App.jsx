@@ -9,7 +9,6 @@ import viteLogo from '/vite.svg';
 import NavBar from './components/NavBar&Footer/NavBar';
 import Footer from './components/NavBar&Footer/Footer';
 import UsefulLink from './components/UsefulLink/UsefulLink';
-import CommentSection from './components/CommentSection';
 //pages
 import HomePage from './pages/HomePage/HomePage';
 import HistoryPage from './pages/HistoryPage';
@@ -22,7 +21,8 @@ import ProfilePage from './pages/ProfilePage';
 
 function App() {
   const [weather, setWeather] = useState(null);
-  const [loggedIn, setLoggedIn] = useState(false); // set logged in status to false
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [userId, setUserId] = useState(null);
 
   // useEffect(() => {
   //   const fetchWeather = async () => {
@@ -31,6 +31,7 @@ function App() {
   //   };
   //   fetchWeather();
   // }, []);
+
 
   return (
     <>
@@ -41,11 +42,11 @@ function App() {
 
         <Routes>
           <Route path="/" element={<HomePage />}/>
-          <Route path='/dashboard' element={<HomePage loggedIn={loggedIn}/>} />
-          <Route path='/history' element={<HistoryPage loggedIn={loggedIn}/>} />
-          <Route path='/impact' element={<ImpactPage loggedIn={loggedIn}/>} />
+          <Route path='/dashboard' element={<HomePage loggedIn={loggedIn} userId={userId}/>} />
+          <Route path='/history' element={<HistoryPage loggedIn={loggedIn} userId={userId}/>} />
+          <Route path='/impact' element={<ImpactPage loggedIn={loggedIn} userId={userId}/>} />
           <Route path="/sign-up" element={<SignUpPage />} />
-          <Route path="/log-in" element={<LogInPage setLoggedIn={setLoggedIn}/>} />
+          <Route path="/log-in" element={<LogInPage setUserId={setUserId} loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
           <Route path="/profile" element={<ProfilePage loggedIn={loggedIn}/>} />
         </Routes>
 

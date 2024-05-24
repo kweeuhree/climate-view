@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Comment from './Comment';
 
-const CommentSection = ({loggedIn}) => {
+const CommentSection = ({loggedIn, userId}) => {
 
   const [comment, setComment] = useState({
     body: '',
@@ -13,10 +13,11 @@ const CommentSection = ({loggedIn}) => {
   return (
     <section className='comment-section'>
         {
-        loggedIn === true ? 
-          <Comment comment={comment} setComment={setComment}/> 
+        loggedIn ? 
+
+        (<Comment comment={comment} setComment={setComment} loggedIn={loggedIn} userId={userId}/> )
           : 
-          'log in to leave a comment'
+        (<div>log in to leave a comment</div>)
         }
     </section>
   )

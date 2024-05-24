@@ -22,7 +22,7 @@ const updateUser = async (req, res) => {
     res.status(201).send(`User ${updatedUser.name} updated`);
 }
 
-// // create a user
+// create a user
 // const createUser = async (req, res) => {
 //     const found = await User.findById(req.userId);
 //     if(found) {

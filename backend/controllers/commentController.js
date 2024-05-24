@@ -11,7 +11,7 @@ const fetchAllComments = async (req, res) => {
 // get a specific comment
 const getComment = async (req, res) => {
     // console.log('commentid inside get comment ', req.commentId)
-    const comment = await Comment.findById(req.commentId);
+    const comment = await Comment.findById(req.commentId).populate('postedBy');
     res.status(200).json({ comment: comment });
 }
 
@@ -23,19 +23,20 @@ const updateComment = async (req, res) => {
         body: body
     }, { new: true }) // store updated value
 
-    res.status(201).send(`comment ${updatedComment.body} updated`);
+    res.status(201).json(`comment ${updatedComment.body} updated`);
 }
 
 // create a comment
 const createComment = async (req, res) => {
-    const { body, postedBy } = req.body;
+
+    console.log(req.body, 'inside createComment');
 
     const newComment = await Comment.create({
-        body: body,
-        postedBy: postedBy // req.user._id when auth
+        body: req.body.body,
+        postedBy: req.body.userId // send req.user._id with auth
     });
 
-    res.status(201).send(`Comment created: ${newComment.body}`);
+    res.status(201).json(`Comment created: ${newComment.body}, postedby ${newComment.postedBy}`);
 }
 
 // delete a comment
