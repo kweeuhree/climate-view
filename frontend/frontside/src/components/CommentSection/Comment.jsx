@@ -17,8 +17,16 @@ const Comment = ({ user, comment, handleEdit, handleDelete }) => {
             </div>
 
             <div className="button-container">
-                <button onClick={handleEdit}>Edit</button>
-                <button onClick={handleDelete}>Delete</button>
+              {
+                 comment.postedBy == user.id ? (
+                  <>
+                   <button onClick={handleEdit}>Edit</button>     
+                   <button onClick={handleDelete}>Delete</button>
+                  </>
+               ) : (
+                null
+               )
+            }
             </div>
         </div>
          

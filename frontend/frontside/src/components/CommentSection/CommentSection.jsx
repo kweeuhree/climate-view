@@ -43,13 +43,19 @@ const CommentSection = ({loggedIn, user}) => {
                   <CommentForm addNewComment={addNewComment} user={user} />
 
                   <ul className='comment-list'>
-                  {comments.length > 0 ? (
-                    comments.map((comment) => ( 
-                      <Comment key={comment._id} user={user} comment={comment} handleEdit={handleEdit} handleDelete={handleDelete}/>
-                    ))
-                  ) : (
-                    <div>No comments yet</div>
-                  )}
+                    {comments.length > 0 ? (
+                      comments.map((comment) => ( 
+                        <Comment 
+                          key={comment._id} 
+                          user={user} 
+                          comment={comment} 
+                          handleEdit={handleEdit} 
+                          handleDelete={handleDelete}
+                        />
+                      ))
+                    ) : (
+                      <div>No comments yet</div>
+                    )}
                   </ul>
                 </div>
               ) : (
