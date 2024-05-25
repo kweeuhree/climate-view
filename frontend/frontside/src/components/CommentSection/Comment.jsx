@@ -1,12 +1,27 @@
-import React from 'react'
+import React from 'react';
+import './CommentSection.css';
 
-const Comment = ({ comment }) => {
+const Comment = ({ user, comment, handleEdit, handleDelete }) => {
+    // show edit and delete button only if currently logged in user.id equals comment.userId--------------------
+    //handle change inside Comment, handle edit inside CommentSection
   return (
     <li>         
-          <p><span><strong>Posted By:</strong></span> <span>{comment.postedBy}</span></p>
-          <p><span><strong>Created At:</strong></span> <span>{new Date(comment.createdAt).toLocaleString()}</span></p>
+          <div className="comment-top">
+            <p><span><strong>Posted By:</strong></span> <span>{comment.postedBy}</span></p>
+            <p><span><strong>Created At:</strong></span> <span>{new Date(comment.createdAt).toLocaleString()}</span></p>
+          </div>
 
-         <p><span><strong>Comment:</strong></span> <span>{comment.body}</span></p>
+        <div className="comment-bottom">
+            <div className="comment-text">
+                <p><span><strong>Comment:</strong></span> <span>{comment.body}</span></p>
+            </div>
+
+            <div className="button-container">
+                <button onClick={handleEdit}>Edit</button>
+                <button onClick={handleDelete}>Delete</button>
+            </div>
+        </div>
+         
     </li>
   )
 }

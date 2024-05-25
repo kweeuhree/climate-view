@@ -27,17 +27,25 @@ const CommentSection = ({loggedIn, user}) => {
   const addNewComment = (data) => {
     setComments((prevComments) => [...prevComments, data]);
   }
+
+  const handleEdit = (event) => {
+
+  };
+
+  const handleDelete = (event) => {
+
+  };
   
   return (
     <section className='comment-section'>
              {loggedIn ? (
                 <div className='all-comments-container'>
                   <CommentForm addNewComment={addNewComment} user={user} />
-                  
+
                   <ul className='comment-list'>
                   {comments.length > 0 ? (
                     comments.map((comment) => ( 
-                      <Comment key={comment._id} comment={comment}/>
+                      <Comment key={comment._id} user={user} comment={comment} handleEdit={handleEdit} handleDelete={handleDelete}/>
                     ))
                   ) : (
                     <div>No comments yet</div>
