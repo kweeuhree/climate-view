@@ -22,7 +22,11 @@ import ProfilePage from './pages/ProfilePage';
 function App() {
   const [weather, setWeather] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
-  const [userId, setUserId] = useState(null);
+  const [user, setUser] = useState({
+    id: null,
+    name: '',
+    email: ''
+  });
 
   // useEffect(() => {
   //   const fetchWeather = async () => {
@@ -42,11 +46,11 @@ function App() {
 
         <Routes>
           <Route path="/" element={<HomePage />}/>
-          <Route path='/dashboard' element={<HomePage loggedIn={loggedIn} userId={userId}/>} />
-          <Route path='/history' element={<HistoryPage loggedIn={loggedIn} userId={userId}/>} />
-          <Route path='/impact' element={<ImpactPage loggedIn={loggedIn} userId={userId}/>} />
+          <Route path='/dashboard' element={<HomePage loggedIn={loggedIn} user={user}/>} />
+          <Route path='/history' element={<HistoryPage loggedIn={loggedIn} user={user}/>} />
+          <Route path='/impact' element={<ImpactPage loggedIn={loggedIn} user={user}/>} />
           <Route path="/sign-up" element={<SignUpPage />} />
-          <Route path="/log-in" element={<LogInPage setUserId={setUserId} loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
+          <Route path="/log-in" element={<LogInPage setUser={setUser} loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
           <Route path="/profile" element={<ProfilePage loggedIn={loggedIn}/>} />
         </Routes>
 

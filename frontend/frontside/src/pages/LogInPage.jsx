@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-const LogInPage = ({setLoggedIn, loggedIn, setUserId}) => {
+const LogInPage = ({setLoggedIn, loggedIn, setUser}) => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -30,7 +30,7 @@ const LogInPage = ({setLoggedIn, loggedIn, setUserId}) => {
         console.log(data, 'handle submit inside LogIn Page');
 
         //update to trigger a render
-        setUserId(data.user._id);
+        setUser({ id: data.user._id, name: data.user.name, email: data.user.email });
         setLoggedIn(true);
         console.log(loggedIn, 'userId, ', data.user._id);
         setFormData({email: '', password: ''});

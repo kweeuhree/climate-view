@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import CommentForm from './CommentForm';
 
-const CommentSection = ({loggedIn, userId}) => {
+const CommentSection = ({loggedIn, user}) => {
 
   const [comments, setComments] = useState([]);
 
@@ -14,10 +14,12 @@ const CommentSection = ({loggedIn, userId}) => {
         {
         loggedIn ? (
         <div className='all-comments-container'>
-               <CommentForm addNewComment={addNewComment} userId={userId}/>
+               <CommentForm addNewComment={addNewComment} user={user}/>
                <ul>
                   {comments.map((item) => (
-                  <li key={item.comment._id}>{item.comment.body}</li>
+                  <li key={item.comment._id}>
+                    <div>{item.comment.body}</div>
+                  </li>
                 ))}
                </ul>
         </div>

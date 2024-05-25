@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-const Comment = ({userId, addNewComment}) => {
+const CommentForm = ({user, addNewComment}) => {
+
+  const userId = user.id;
 
   const [formData, setFormData] = useState({
     body: '',
@@ -52,4 +54,4 @@ const Comment = ({userId, addNewComment}) => {
   );
 }
 
-export default Comment;
+export default CommentForm;

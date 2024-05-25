@@ -1,11 +1,11 @@
 import React from 'react';
 import CommentSection from '../components/CommentSection';
 
-const HistoryPage = ({loggedIn, userId}) => {
+const HistoryPage = ({loggedIn, user}) => {
   return (
     <>
     <section className='history-section'>HistoryPage</section>
-    <CommentSection userId={userId} loggedIn={loggedIn}/>
+    <CommentSection user={user} loggedIn={loggedIn}/>
     </>
   )
 }
