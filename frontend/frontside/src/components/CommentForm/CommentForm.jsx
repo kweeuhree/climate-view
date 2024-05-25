@@ -27,7 +27,7 @@ const CommentForm = ({user, addNewComment}) => {
       });
 
         const data = await response.json();
-        console.log(data, 'handle submit inside create form');
+        console.log(data, 'handle submit inside commentForm');
 
         //update to trigger a render
         addNewComment(data);

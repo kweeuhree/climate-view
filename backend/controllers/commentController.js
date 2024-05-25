@@ -17,13 +17,10 @@ const getComment = async (req, res) => {
 
 // update a comment
 const updateComment = async (req, res) => {
-    const { body } = req.body; // destructure body object
 
-    const updatedComment = await Comment.findByIdAndUpdate(req.commentId, {
-        body: body
-    }, { new: true }) // store updated value
+    const updatedComment = await Comment.findByIdAndUpdate(req.commentId, req.body, { new: true }) // store updated value
 
-    res.status(201).json({ body: updatedComment.body });
+    res.status(201).json({ updatedComment });
 }
 
 // create a comment

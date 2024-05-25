@@ -17,7 +17,7 @@ router.param('id', async (req, res, next, id) => {
             res.status(404).send('User not found');
         }
     } catch (error) {
-        res.status(500).send('Server Error ', error);
+        res.status(500);
     }
 });
 

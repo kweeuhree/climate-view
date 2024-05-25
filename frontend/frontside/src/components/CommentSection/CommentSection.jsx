@@ -25,15 +25,41 @@ const CommentSection = ({loggedIn, user}) => {
   }, []);
 
   const addNewComment = (data) => {
-    setComments((prevComments) => [...prevComments, data]);
+    const newComment = data.comment;
+    console.log(newComment);
+    setComments((prevComments) => [...prevComments, newComment]);
   }
 
-  const handleEdit = (event) => {
+  const handleEdit = async (event) => {
+    console.log(event, ', event inside handleEdit of CommentSection');
+    try {
+      const response = await fetch(`http://localhost:3000/comments/${event._id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(event)
+      });
 
+      if(response.ok) {
+        const data = await response.json();
+        console.log('updated comment inside handleEdit of commentSection: ', data.updatedComment);
+
+        const updatedComment = data.updatedComment;
+
+        setComments((prevComments) => 
+          prevComments.map((comment) => 
+            comment._id === event._id ? updatedComment : comment
+          )
+        );
+      };
+
+    } catch (error) {
+      console.log('error inside handleEdit of commentSection: ', error);
+    }
   };
 
   const handleDelete = async (id) => {
-    console.log(event.target, ' event target inside handle delete');
+
+    //remove from database
     const response = await fetch(`http://localhost:3000/comments/${id}`, {
       method: 'DELETE'
     });

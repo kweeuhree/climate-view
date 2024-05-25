@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CommentSection.css';
 
 const Comment = ({ user, comment, handleEdit, handleDelete }) => {
-    // show edit and delete button only if currently logged in user.id equals comment.userId--------------------
     //handle change inside Comment, handle edit inside CommentSection
+    const [editComment, setEditComment] = useState(null);
+    const [formData, setFormData ] = useState({
+        body: comment.body
+    })
+
+    const handleChange = (event) => {
+        setFormData({
+            ...formData,
+            [event.target.name]: event.target.value
+        })
+    }
+
+    const setEditingMode = (comment) => {
+        setEditComment(comment);
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const updatedComment = {...comment, body: formData.body};
+        console.log(updatedComment, ' updatedComment inside handleEdit of Comment');
+        handleEdit(updatedComment);
+        setEditComment(null)
+    }
+
   return (
     <li>         
           <div className="comment-top">
@@ -13,14 +36,27 @@ const Comment = ({ user, comment, handleEdit, handleDelete }) => {
 
         <div className="comment-bottom">
             <div className="comment-text">
+               {editComment ? (
+                <form onSubmit={handleSubmit}>
+                  <textarea
+                   type="text" 
+                   name='body'
+                   onChange={handleChange}
+                   defaultValue={comment.body}
+                //    value={formData.body}
+                  />
+                  <button type="submit">Submit</button>
+                </form>
+               ) : (
                 <p><span><strong>Comment:</strong></span> <span>{comment.body}</span></p>
+               )}
             </div>
 
             <div className="button-container">
               {
                  comment.postedBy == user.id ? (
                   <>
-                   <button onClick={() => handleEdit(comment)}>Edit</button>     
+                   <button onClick={() => setEditingMode(comment)}>Edit</button>     
                    <button onClick={()=> handleDelete(comment._id)}>Delete</button>
                   </>
                ) : (
