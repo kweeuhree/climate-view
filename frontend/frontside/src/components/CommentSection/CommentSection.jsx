@@ -32,8 +32,20 @@ const CommentSection = ({loggedIn, user}) => {
 
   };
 
-  const handleDelete = (event) => {
+  const handleDelete = async (id) => {
+    console.log(event.target, ' event target inside handle delete');
+    const response = await fetch(`http://localhost:3000/comments/${id}`, {
+      method: 'DELETE'
+    });
+    if(response.ok) {
+      console.log('response ok');
+    } else {
+      console.log('inside else block');
+    }
 
+    //remove from state
+    const updatedComments = comments.filter((item) => item._id !== id);
+    setComments(updatedComments);
   };
   
   return (

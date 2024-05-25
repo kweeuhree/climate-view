@@ -20,8 +20,8 @@ const Comment = ({ user, comment, handleEdit, handleDelete }) => {
               {
                  comment.postedBy == user.id ? (
                   <>
-                   <button onClick={handleEdit}>Edit</button>     
-                   <button onClick={handleDelete}>Delete</button>
+                   <button onClick={() => handleEdit(comment)}>Edit</button>     
+                   <button onClick={()=> handleDelete(comment._id)}>Delete</button>
                   </>
                ) : (
                 null
