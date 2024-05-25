@@ -23,7 +23,7 @@ const updateComment = async (req, res) => {
         body: body
     }, { new: true }) // store updated value
 
-    res.status(201).json(`comment ${updatedComment.body} updated`);
+    res.status(201).json({ body: updatedComment.body });
 }
 
 // create a comment
@@ -36,13 +36,13 @@ const createComment = async (req, res) => {
         postedBy: req.body.userId // send req.user._id with auth
     });
 
-    res.status(201).json(`Comment created: ${newComment.body}, postedby ${newComment.postedBy}`);
+    res.status(201).json({ body: newComment.body, postedBy: newComment.postedBy });
 }
 
 // delete a comment
 const deleteComment = async (req, res) => {
     await Comment.findByIdAndDelete(req.commentId);
-    res.status(200).json({ msg: 'Comment deleted' });
+    res.status(200).json({ msg: 'CommentController: Comment deleted' });
 }
 
 

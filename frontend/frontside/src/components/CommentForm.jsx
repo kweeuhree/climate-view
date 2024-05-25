@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 
-const Comment = ({comment, setComment, userId}) => {
+const Comment = ({userId, addNewComment}) => {
+
+  const [comment, setComment] = useState({
+    body: '',
+    postedBy: null  
+  })
 
   const [formData, setFormData] = useState({
     body: '',
@@ -27,33 +32,30 @@ const Comment = ({comment, setComment, userId}) => {
         console.log(data, 'handle submit inside create form');
 
         //update to trigger a render
-        setComment((prevComment) => [...prevComment, data]);
+        // setComment({body: formData.body, postedBy: userId});
+        addNewComment({body: formData.body, postedBy: userId});
+        console.log('comment after setting comments: ', comment.body);
         setFormData({body:''});
     } catch (error) {
-        console.log(error, 'errror inside handle submit');
+        console.log(error, 'error inside handle submit');
     }
   }
 
   return (
     <div className='comment-container'>
 
-    { comment.body ? 
-    (
-       <div className="comment">{comment.body}</div>
-    ) : ( 
-      <form onSubmit={handleSubmit}>
-            <textarea 
-                type='text' 
-                name="body"
-                onChange={handleChange} 
-                value={formData.body}
-            />
-            <button type='submit'>Submit</button>
+        <form onSubmit={handleSubmit}>
+          <textarea
+            type='text'
+            name='body'
+            onChange={handleChange}
+            value={formData.body}
+          />
+          <button type='submit'>Submit</button>
         </form>
-    )}
-
+      
     </div>
-  )
+  );
 }
 
 export default Comment;

@@ -1,26 +1,32 @@
 import React, {useState} from 'react';
-import Comment from './Comment';
+import CommentForm from './CommentForm';
 
 const CommentSection = ({loggedIn, userId}) => {
 
-  const [comment, setComment] = useState({
-    body: '',
-    postedBy: null  
-  })
+  const [comments, setComments] = useState([]);
 
-
+  const addNewComment = (data) => {
+    setComments((prevComments) => [...comments, data]);
+  }
 
   return (
     <section className='comment-section'>
         {
-        loggedIn ? 
-
-        (<Comment comment={comment} setComment={setComment} loggedIn={loggedIn} userId={userId}/> )
-          : 
-        (<div>log in to leave a comment</div>)
-        }
+        loggedIn ? (
+        <div className='all-comments-container'>
+               <CommentForm comments={comments} addNewComment={addNewComment} loggedIn={loggedIn} userId={userId}/>
+               <ul>
+                  {comments.length > 0 && 
+                  comments.map((item, index) => (
+                  <li key={index}>{item.body}</li>
+                ))}
+               </ul>
+        </div>
+      ) : (
+        <div>log in to leave a comment</div>
+      )}
     </section>
-  )
-}
+  );
+};
 
 export default CommentSection;
