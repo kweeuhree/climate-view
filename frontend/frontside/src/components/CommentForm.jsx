@@ -1,11 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const Comment = ({userId, addNewComment}) => {
-
-  const [comment, setComment] = useState({
-    body: '',
-    postedBy: null  
-  })
 
   const [formData, setFormData] = useState({
     body: '',
@@ -25,17 +20,16 @@ const Comment = ({userId, addNewComment}) => {
       const response = await fetch('http://localhost:3000/comments', {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({ ...formData, userId })
       });
 
         const data = await response.json();
         console.log(data, 'handle submit inside create form');
 
         //update to trigger a render
-        // setComment({body: formData.body, postedBy: userId});
-        addNewComment({body: formData.body, postedBy: userId});
-        console.log('comment after setting comments: ', comment.body);
-        setFormData({body:''});
+        addNewComment(data);
+
+        setFormData({body:'', postedBy: ''});
     } catch (error) {
         console.log(error, 'error inside handle submit');
     }

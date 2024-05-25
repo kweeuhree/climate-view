@@ -14,11 +14,10 @@ const CommentSection = ({loggedIn, userId}) => {
         {
         loggedIn ? (
         <div className='all-comments-container'>
-               <CommentForm comments={comments} addNewComment={addNewComment} loggedIn={loggedIn} userId={userId}/>
+               <CommentForm addNewComment={addNewComment} userId={userId}/>
                <ul>
-                  {comments.length > 0 && 
-                  comments.map((item, index) => (
-                  <li key={index}>{item.body}</li>
+                  {comments.map((item) => (
+                  <li key={item.comment._id}>{item.comment.body}</li>
                 ))}
                </ul>
         </div>

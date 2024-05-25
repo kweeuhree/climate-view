@@ -36,7 +36,7 @@ const createComment = async (req, res) => {
         postedBy: req.body.userId // send req.user._id with auth
     });
 
-    res.status(201).json({ body: newComment.body, postedBy: newComment.postedBy });
+    res.status(201).json({ comment: newComment});
 }
 
 // delete a comment
