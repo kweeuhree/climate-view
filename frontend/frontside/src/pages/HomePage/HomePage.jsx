@@ -1,6 +1,6 @@
 import React from 'react';
 import './HomePage.css';
-import CommentSection from '../../components/CommentSection';
+import CommentSection from '../../components/CommentSection/CommentSection';
 
 const HomePage = ({loggedIn, user}) => {
   return (

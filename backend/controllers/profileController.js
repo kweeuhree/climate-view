@@ -10,6 +10,7 @@ const fetchAllUsers = async (req, res) => {
 // get a specific user
 const getUser = async (req, res) => {
     // console.log('userid inside get user ', req.userId)
+    //populate all their comments----------------------------------------
     const user = await User.findById(req.userId);
     res.status(200).json({ user: user });
 }

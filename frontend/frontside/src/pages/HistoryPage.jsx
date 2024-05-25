@@ -1,5 +1,5 @@
 import React from 'react';
-import CommentSection from '../components/CommentSection';
+import CommentSection from '../components/CommentSection/CommentSection';
 
 const HistoryPage = ({loggedIn, user}) => {
   return (
