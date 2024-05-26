@@ -66,7 +66,7 @@ const signup = async (req, res) => {
     }
   };
 
-  const logout = (req, res) => {
+  const logout = (req, res, next) => {
       res.clearCookie("authorization");
       res.sendStatus(200);
       console.log(`Successfully Logged Out`);

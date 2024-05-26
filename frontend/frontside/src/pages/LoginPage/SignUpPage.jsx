@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './LogInStyle.css';
 
 const SignUpPage = () => {
 
@@ -51,24 +52,38 @@ const SignUpPage = () => {
 
   return (
     <div className='sign-up'>
+          <header>
+            <h1>join the community 
+              <span>
+                <img 
+                src="https://64.media.tumblr.com/eed1cc61a7f585313c9f60b8a07c2d33/aed6e0128794955d-99/s400x600/4e95ef3dac6e9df5daa57a2d6765729d940060f0.gif" 
+                alt="Spinning heart" 
+              />
+              </span>
+              </h1>
+            </header>
+
            <form onSubmit={handleSubmit}>
     
         <input 
           type='text' 
           name="name" 
           onChange={handleChange} 
+          placeholder='name'
           value={formData.name}
           /> 
           <input 
              type='text' 
              name="email" 
              onChange={handleChange} 
+             placeholder='email'
              value={formData.email}
           />
             <input 
                 type='text' 
                 name="password" 
                 onChange={handleChange} 
+                placeholder='password'
                 value={formData.password}
             />
             <button type='submit'>Submit</button>

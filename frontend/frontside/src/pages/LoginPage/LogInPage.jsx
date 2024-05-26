@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './LogInStyle.css';
 
 
 const LogInPage = ({setLoggedIn, loggedIn, setUser}) => {
@@ -44,11 +45,13 @@ const LogInPage = ({setLoggedIn, loggedIn, setUser}) => {
 
   return (
     <div className='log-in'>
+      <header><h1>welcome !</h1></header>
       <form onSubmit={handleSubmit}>
          <input 
              type='text' 
              name="email" 
              onChange={handleChange} 
+             placeholder='email'
              value={formData.email}
             />
 
@@ -56,6 +59,7 @@ const LogInPage = ({setLoggedIn, loggedIn, setUser}) => {
               type='text' 
               name="password" 
               onChange={handleChange} 
+              placeholder='password'
               value={formData.password}
             />
             <button type='submit'>Submit</button>
