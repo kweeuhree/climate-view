@@ -19,10 +19,10 @@ const signup = async (req, res) => {
         });
         console.log("User Created", newUser);
         // Send Response
-        res.sendStatus(200);
+        res.json(newUser);
   } catch (error) {
     console.log(`Error inside signup: ${error}`);
-    res.status(500).send('Server Error');
+    res.status(500);
   }
   };
   
@@ -70,6 +70,7 @@ const signup = async (req, res) => {
       res.clearCookie("authorization");
       res.sendStatus(200);
       console.log(`Successfully Logged Out`);
+      next();
   };
   
   const checkAuth = (req,res) => {

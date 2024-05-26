@@ -78,8 +78,13 @@ const CommentSection = ({loggedIn, user}) => {
              {loggedIn ? (
                 <div className='all-comments-container'>
                   <CommentForm addNewComment={addNewComment} user={user} />
+                </div>
+              ) : (
+                <div>log in to leave a comment</div>
+              )}
 
-                  <ul className='comment-list'>
+              {/* all comments */}
+                <ul className='comment-list'>
                     {comments.length > 0 ? (
                       comments.map((comment) => ( 
                         <Comment 
@@ -94,10 +99,6 @@ const CommentSection = ({loggedIn, user}) => {
                       <div>No comments yet</div>
                     )}
                   </ul>
-                </div>
-              ) : (
-                <div>log in to leave a comment</div>
-              )}
     </section>
   );
 };

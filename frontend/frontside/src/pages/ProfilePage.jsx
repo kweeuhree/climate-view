@@ -10,6 +10,16 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
 
   const navigate = useNavigate();
 
+  const logoutLogic = () => {
+    setLoggedIn(false);
+    setUser({
+      id: null,
+      name: '',
+      email: ''
+    });
+    navigate('/dashboard');
+  };
+
   const handleClick = () => {
     setEditName(true);
   }
@@ -44,8 +54,19 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
     }
   }
 
-  const handleDelete = async () => {
-    console.log('inside handleDelete');
+  const handleDelete = async (event) => {
+    console.log('attempting deleting profile');
+    try {
+      const response = await fetch(`http://localhost:3000/profile/${user.id}`, {
+        method: 'DELETE'
+      });
+    if(response.ok) {
+      console.log(response);
+      logoutLogic();
+    }
+    } catch (error) {
+      console.log('error inside handleDelete of ProfilePage ', error);
+    }
   }
 
   const handleLogout = async () => {
@@ -58,20 +79,12 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
   
       if (response.ok) {
         console.log('Logout successful');
-        setLoggedIn(false);
-        setUser({
-          id: null,
-          name: '',
-          email: ''
-        });
-        navigate('/dashboard');
+        logoutLogic();
       } else {
-        console.error('Logout failed:', response.statusText);
-        // Handle logout failure, e.g., display an error message to the user
+        console.error('Logout failed:', response);
       }
     } catch (error) {
       console.error('Error during logout:', error);
-      // Handle network or other errors, e.g., display an error message to the user
     }
   };
 

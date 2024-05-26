@@ -5,6 +5,7 @@ const Comment = ({ user, comment, handleEdit, handleDelete }) => {
     //handle change inside Comment, handle edit inside CommentSection
     const [editComment, setEditComment] = useState(null);
     const [formData, setFormData ] = useState({
+        postedBy:user.id,
         body: comment.body
     })
 
