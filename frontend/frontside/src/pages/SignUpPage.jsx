@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const SignUpPage = () => {
 
+    const [signUpMessage, setSignUpMessage] = useState(null);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -25,11 +26,21 @@ const SignUpPage = () => {
             body: JSON.stringify(formData)
           });
     
+           if(response.ok) {
             const data = await response.json();
             console.log(data, 'handle submit inside create form');
-    
+
             //update to trigger a render
+            setSignUpMessage(true);
             setFormData({name:'', email: '', password: ''});
+
+           } else {
+
+            console.log('failed to sign up');
+            setSignUpMessage(false);
+           }
+    
+            
     
         } catch (error) {
             console.log(error, 'errror inside handle submit');
@@ -60,6 +71,8 @@ const SignUpPage = () => {
             />
             <button type='submit'>Submit</button>
         </form>
+        {signUpMessage === true && <div>sign up successful</div>}
+        {signUpMessage === false && <div>failed sign up</div>}
   </div>
   )
 }

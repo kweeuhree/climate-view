@@ -103,6 +103,7 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
               <form onSubmit={handleSubmit}>
                 <input type="text" name='name' placeholder='enter new name' value={formData.name} onChange={handleChange}/>
                 <button type="submit">Submit</button>
+                <button onClick={()=>setEditName(false)}>Cancel</button>
               </form>
             ) : (
               <button onClick={handleClick}>update name</button>
