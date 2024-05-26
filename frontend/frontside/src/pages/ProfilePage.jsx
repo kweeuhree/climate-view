@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
 
   const [editName, setEditName] = useState(false);
+  const [showPopUp, setShowPopUp] = useState(false);
   const [formData, setFormData] = useState({
     name: user.name
   })
@@ -52,6 +53,11 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
     } catch (error) {
       console.log('inside handleSubmit of ProfilePage ', error);
     }
+  }
+
+  const handleConsent = () => {
+    console.log('attempting popup');
+    setShowPopUp(true);
   }
 
   const handleDelete = async (event) => {
@@ -111,12 +117,30 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
           </div>
           
           <div>
-            <button onClick={handleDelete}>delete account</button>
+            <button onClick={handleConsent}>delete account</button>
           </div>
+
+          { showPopUp &&   (
+
+                <div className='consent-popup'>
+                  <div>Delete account?</div>
+                  <div>
+                    <button onClick={handleDelete}>
+                      Yes
+                    </button>
+                    <button onClick={()=> setShowPopUp(false)}>
+                      No
+                    </button>
+                  </div>
+                </div>
+               )
+              }
 
           <div>
             <button onClick={handleLogout}>log out</button>
           </div>
+          
+        
 
         </div>
 
