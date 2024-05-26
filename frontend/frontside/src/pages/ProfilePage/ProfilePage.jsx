@@ -5,6 +5,7 @@ import './ProfilePage.css';
 const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
 
   const [editName, setEditName] = useState(false);
+  const [displayDays, setDisplayDays] = useState(0);
   const [showPopUp, setShowPopUp] = useState(false);
   const [formData, setFormData] = useState({
     name: user.name
@@ -12,15 +13,21 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
 
   const navigate = useNavigate();
 
-  const logoutLogic = () => {
-    setLoggedIn(false);
-    setUser({
-      id: null,
-      name: '',
-      email: ''
-    });
-    navigate('/dashboard');
-  };
+  // render days since account creation dynamically
+  useEffect(() => {
+    if (!user || !user.createdAt) return;
+
+    const target = days(user);
+    const interval = setInterval(() => {
+      setDisplayDays((prevDays) => {
+        if (prevDays >= target) {
+          clearInterval(interval);
+          return target;
+        }
+        return prevDays + 1;
+      });
+    }, 550); 
+  }, [user]);
 
   const days = (user) => {
     const today = Date.now();
@@ -71,6 +78,16 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
     setShowPopUp(true);
   }
 
+  const logoutLogic = () => {
+    setLoggedIn(false);
+    setUser({
+      id: null,
+      name: '',
+      email: ''
+    });
+    navigate('/dashboard');
+  };
+
   const handleDelete = async (event) => {
     console.log('attempting deleting profile');
     try {
@@ -112,7 +129,7 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
       <section className='profile-section'>
         <div className="top-profile">
           <div><h1>hello, {user.name}</h1></div>
-          <div className="account-days">{user && days(user)} day(s) since creation</div>
+          <div className="account-days">{displayDays} day(s) since creation</div>
         </div>
 
         <div className="bottom-profile">
