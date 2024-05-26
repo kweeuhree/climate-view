@@ -7,7 +7,8 @@ const CommentForm = ({user, addNewComment}) => {
 
   const [formData, setFormData] = useState({
     body: '',
-    postedBy: userId
+    postedBy: userId,
+    userName: user.name
   })
 
   function handleChange(event) {
@@ -33,7 +34,7 @@ const CommentForm = ({user, addNewComment}) => {
         //update to trigger a render
         addNewComment(data.comment);
 
-        setFormData({body:'', postedBy: userId});
+        setFormData({body:'', postedBy: userId, userName: user.name});
     } catch (error) {
         console.log(error, 'error inside handle submit');
     }

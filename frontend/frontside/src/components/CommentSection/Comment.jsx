@@ -5,8 +5,9 @@ const Comment = ({ user, comment, handleEdit, handleDelete }) => {
     //handle change inside Comment, handle edit inside CommentSection
     const [editComment, setEditComment] = useState(null);
     const [formData, setFormData ] = useState({
-        postedBy:user.id,
-        body: comment.body
+        body: comment.body,
+        postedBy: user.id,
+        userName: user.name
     })
 
     const handleChange = (event) => {
@@ -31,7 +32,7 @@ const Comment = ({ user, comment, handleEdit, handleDelete }) => {
   return (
     <li>         
           <div className="comment-top">
-            <p><span><strong>Posted By:</strong></span> <span>{user.name}</span></p>
+            <p><span><strong>Posted By:</strong></span> <span>{comment.userName}</span></p>
             <p><span><strong>Created At:</strong></span> <span>{new Date(comment.createdAt).toLocaleString()}</span></p>
           </div>
 

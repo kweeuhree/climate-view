@@ -21,19 +21,19 @@ router.param('id', async (req, res, next, id) => {
     }
 });
 
-// get all users
+// get all comments
 router.get('/', commentController.fetchAllComments);
 
-// get a specific user
+// get a specific comment
 router.get('/:id', commentController.getComment);
 
-// update a user
+// update a comment
 router.put('/:id', commentController.updateComment);
 
-// create a user
+// create a comment
 router.post('/', commentController.createComment);
 
-// delete a user
+// delete a comment
 router.delete('/:id', commentController.deleteComment);
 
 
