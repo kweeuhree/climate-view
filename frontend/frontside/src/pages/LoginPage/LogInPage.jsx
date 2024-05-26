@@ -33,7 +33,7 @@ const LogInPage = ({setLoggedIn, loggedIn, setUser}) => {
         console.log(data, 'handle submit inside LogIn Page');
 
         //update to trigger a render
-        setUser({ id: data.user._id, name: data.user.name, email: data.user.email });
+        setUser({ id: data.user._id, name: data.user.name, email: data.user.email, createdAt:data.user.createdAt });
         setLoggedIn(true);
         console.log(loggedIn, 'userId, ', data.user._id);
         setFormData({email: '', password: ''});

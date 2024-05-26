@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './ProfilePage.css';
 
@@ -21,6 +21,16 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
     });
     navigate('/dashboard');
   };
+
+  const days = (user) => {
+    const today = Date.now();
+    const createdAt = new Date(user.createdAt);
+    console.log(createdAt, 'inside days, createadAt');
+    const difference = today - createdAt.getTime();
+    const result = Math.floor(difference / (1000 * 60 * 60 * 24));
+    console.log(result, ' result inside days');
+    return result;
+  }
 
   const handleClick = () => {
     setEditName(true);
@@ -101,7 +111,8 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
     return (
       <section className='profile-section'>
         <div className="top-profile">
-          <h1>hello, {user.name}</h1>
+          <div><h1>hello, {user.name}</h1></div>
+          <div className="account-days">{user && days(user)} day(s) since creation</div>
         </div>
 
         <div className="bottom-profile">
