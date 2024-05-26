@@ -3,11 +3,12 @@ import './CommentSection.css';
 
 const Comment = ({ user, comment, handleEdit, handleDelete }) => {
     //handle change inside Comment, handle edit inside CommentSection
+
     const [editComment, setEditComment] = useState(null);
     const [formData, setFormData ] = useState({
         body: comment.body,
-        postedBy: user.id,
-        userName: user.name
+        postedBy: user?.id,
+        userName: user?.name
     })
 
     const handleChange = (event) => {
@@ -56,7 +57,7 @@ const Comment = ({ user, comment, handleEdit, handleDelete }) => {
 
             <div className="button-container">
               {
-                 comment.postedBy === user.id ? (
+                 comment.postedBy === user?.id ? (
                   <>
                    <button onClick={() => setEditingMode(comment)}>Edit</button>     
                    <button onClick={()=> handleDelete(comment._id)}>Delete</button>
