@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LogInStyle.css';
+import Sphere from '../../components/Sphere';
 
 const SignUpPage = () => {
 
@@ -54,12 +55,7 @@ const SignUpPage = () => {
     <div className='sign-up'>
           <header>
             <h1>join the community 
-              <span>
-                <img 
-                src="https://64.media.tumblr.com/eed1cc61a7f585313c9f60b8a07c2d33/aed6e0128794955d-99/s400x600/4e95ef3dac6e9df5daa57a2d6765729d940060f0.gif" 
-                alt="Spinning heart" 
-              />
-              </span>
+             <Sphere />
               </h1>
             </header>
 

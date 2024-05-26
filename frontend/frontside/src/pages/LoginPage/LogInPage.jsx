@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Sphere from '../../components/Sphere';
 import './LogInStyle.css';
 
 
@@ -45,7 +46,8 @@ const LogInPage = ({setLoggedIn, loggedIn, setUser}) => {
 
   return (
     <div className='log-in'>
-      <header><h1>welcome !</h1></header>
+      <header><h1>welcome !
+      <Sphere /></h1></header>
       <form onSubmit={handleSubmit}>
          <input 
              type='text' 

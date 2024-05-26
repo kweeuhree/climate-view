@@ -15,7 +15,7 @@ import HistoryPage from './pages/HistoryPage';
 import ImpactPage from './pages/ImpactPage';
 import SignUpPage from './pages/LoginPage/SignUpPage';
 import LogInPage from './pages/LoginPage/LogInPage';
-import ProfilePage from './pages/ProfilePage';
+import ProfilePage from './pages/ProfilePage/ProfilePage';
 
 
 

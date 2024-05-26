@@ -62,13 +62,30 @@
 
   
 /* sign up only */
-.sign-up {
+/* .sign-up {
     position: relative;
     z-index:2;
+} */
+
+.sign-up h1, .log-in h1 {
+    position: relative;    
+    z-index:4;
 }
 
 .sign-up h1 img {
     position: absolute;
     z-index:1;
-    width: 25%;
+    width: 65%;
+    bottom: 5%;
+    right: -40%;
+    opacity: 0.5;
+}
+
+.log-in h1 img  {
+    position: absolute;
+    z-index:1;
+    width: 125.5%;
+    bottom: 5%;
+    right: -124%;
+    opacity: 0.5;
 }
