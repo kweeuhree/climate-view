@@ -1,11 +1,13 @@
 #root {
-  width: 90vw;
+  width: 95vw;
   max-width: 1280px;
+  height: 95vh;
+  background-color: rgba(170, 178, 182, 0.493);
+  border-radius: 2em;
   margin: 0 auto;
-  /* padding: 2rem; */
-  text-align: center;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
+  justify-content: space-between;
+  text-align: center;
 }
 

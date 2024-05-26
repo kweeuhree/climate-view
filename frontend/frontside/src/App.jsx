@@ -40,9 +40,11 @@ function App() {
   return (
     <>
 
-    <UsefulLink />
+      <div className="head">
+        <UsefulLink />
 
-      <NavBar loggedIn={loggedIn}/>
+        <NavBar loggedIn={loggedIn}/>
+      </div>
 
         <Routes>
           <Route path="/" element={<HomePage />}/>
