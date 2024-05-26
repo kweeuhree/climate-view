@@ -1,5 +1,22 @@
 .fundraiser-container {
     /* border: 1px solid rgba(148, 148, 148, 0.555); */
-    background-color: rgba(250, 235, 215, 0.1);
+    background-color: rgba(250, 235, 215, 0.25);
     text-align: center;
+    font-size: 1.1rem;
+    transition: background-color 300ms 40ms linear;
+}
+
+.fundraiser-container:hover {
+    background-color: rgba(250, 235, 215, 0.4);
+}
+
+.fundraiser-container a {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    letter-spacing: 0.2vw;
+    text-shadow: 1px 1px 2px rgb(4, 63, 224);
+}
+
+.fundraiser-container a:hover {
+    color: rgb(255, 255, 255);
 }
