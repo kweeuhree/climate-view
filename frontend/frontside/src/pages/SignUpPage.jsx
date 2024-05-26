@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SignUpPage = () => {
 
@@ -8,6 +9,7 @@ const SignUpPage = () => {
         email: '',
         password: ''
       })
+    const navigate = useNavigate();
 
       function handleChange(event) {
         setFormData({
@@ -33,7 +35,7 @@ const SignUpPage = () => {
             //update to trigger a render
             setSignUpMessage(true);
             setFormData({name:'', email: '', password: ''});
-
+            navigate('/login');
            } else {
 
             console.log('failed to sign up');

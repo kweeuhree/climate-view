@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const LogInPage = ({setLoggedIn, loggedIn, setUser}) => {
   const navigate = useNavigate();
 
+  const [loginSuccess, setLoginSuccess] = useState(true);
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -36,6 +37,7 @@ const LogInPage = ({setLoggedIn, loggedIn, setUser}) => {
         setFormData({email: '', password: ''});
         navigate('/profile');
     } catch (error) {
+        setLoginSuccess(false);
         console.log(error, 'error inside handle submit');
     }
   }
@@ -58,6 +60,7 @@ const LogInPage = ({setLoggedIn, loggedIn, setUser}) => {
             />
             <button type='submit'>Submit</button>
       </form>
+      {!loginSuccess && <div>Failed to log in</div>}
   </div>
   )
 }
