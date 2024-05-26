@@ -26,11 +26,11 @@ const updateComment = async (req, res) => {
 // create a comment
 const createComment = async (req, res) => {
 
-    console.log(req.body, 'inside createComment');
+    console.log(req.body.postedBy, 'inside createComment');
 
     const newComment = await Comment.create({
         body: req.body.body,
-        postedBy: req.body.userId // send req.user._id with auth
+        postedBy: req.body.postedBy // send req.user._id with auth
     });
 
     res.status(201).json({ comment: newComment});

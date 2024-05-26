@@ -24,8 +24,7 @@ const CommentSection = ({loggedIn, user}) => {
   
   }, []);
 
-  const addNewComment = (data) => {
-    const newComment = data.comment;
+  const addNewComment = (newComment) => {
     console.log(newComment);
     setComments((prevComments) => [...prevComments, newComment]);
   }

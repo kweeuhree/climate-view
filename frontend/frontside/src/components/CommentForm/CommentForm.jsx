@@ -7,7 +7,7 @@ const CommentForm = ({user, addNewComment}) => {
 
   const [formData, setFormData] = useState({
     body: '',
-    userId: userId
+    postedBy: userId
   })
 
   function handleChange(event) {
@@ -19,20 +19,21 @@ const CommentForm = ({user, addNewComment}) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log(formData, ' formData inside handleSubmit of commentForm')
     try{
       const response = await fetch('http://localhost:3000/comments', {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, userId })
+        body: JSON.stringify(formData)
       });
 
         const data = await response.json();
         console.log(data, 'handle submit inside commentForm');
 
         //update to trigger a render
-        addNewComment(data);
+        addNewComment(data.comment);
 
-        setFormData({body:'', postedBy: ''});
+        setFormData({body:'', postedBy: userId});
     } catch (error) {
         console.log(error, 'error inside handle submit');
     }

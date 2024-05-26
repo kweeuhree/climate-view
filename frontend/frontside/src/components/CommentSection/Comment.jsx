@@ -30,7 +30,7 @@ const Comment = ({ user, comment, handleEdit, handleDelete }) => {
   return (
     <li>         
           <div className="comment-top">
-            <p><span><strong>Posted By:</strong></span> <span>{comment.postedBy}</span></p>
+            <p><span><strong>Posted By:</strong></span> <span>{user.name}</span></p>
             <p><span><strong>Created At:</strong></span> <span>{new Date(comment.createdAt).toLocaleString()}</span></p>
           </div>
 
