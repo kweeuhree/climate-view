@@ -16,11 +16,12 @@ const getUser = async (req, res) => {
 }
 
 // update a user
-const updateUser = async (req, res) => {
+const updateUser = async (req, res, next) => {
   
     const updatedUser = await User.findByIdAndUpdate(req.userId, req.body, { new: true }) // store updated value
     console.log(`profileController: updated User ${updatedUser}`);
     res.status(201).json({ updatedUser });
+    next();
 }
 
 // create a user
