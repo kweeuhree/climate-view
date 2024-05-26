@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const ProfilePage = ({loggedIn, setUser, user}) => {
+const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
 
   const [editName, setEditName] = useState(false);
   const [formData, setFormData] = useState({
     name: user.name
   })
+
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setEditName(true);
@@ -45,6 +48,33 @@ const ProfilePage = ({loggedIn, setUser, user}) => {
     console.log('inside handleDelete');
   }
 
+  const handleLogout = async () => {
+    console.log('inside handleLogout');
+    try {
+      const response = await fetch('http://localhost:3000/auth/logout', {
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/json' }
+      });
+  
+      if (response.ok) {
+        console.log('Logout successful');
+        setLoggedIn(false);
+        setUser({
+          id: null,
+          name: '',
+          email: ''
+        });
+        navigate('/dashboard');
+      } else {
+        console.error('Logout failed:', response.statusText);
+        // Handle logout failure, e.g., display an error message to the user
+      }
+    } catch (error) {
+      console.error('Error during logout:', error);
+      // Handle network or other errors, e.g., display an error message to the user
+    }
+  };
+
   // profile display function
   const profileDisplay = () => {
 
@@ -68,6 +98,10 @@ const ProfilePage = ({loggedIn, setUser, user}) => {
           
           <div>
             <button onClick={handleDelete}>delete account</button>
+          </div>
+
+          <div>
+            <button onClick={handleLogout}>log out</button>
           </div>
 
         </div>
