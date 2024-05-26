@@ -40,10 +40,13 @@ const Comment = ({ user, comment, handleEdit, handleDelete }) => {
         <div className="comment-bottom">
             <div className="comment-text">
                {editComment ? (
-                <form onSubmit={handleSubmit}>
+                <form className="update-comment-form" onSubmit={handleSubmit}>
                   <textarea
+                  className='update-comment-textarea'
                    type="text" 
                    name='body'
+                   rows="3"
+                   cols="50"
                    onChange={handleChange}
                    defaultValue={comment.body}
                 //    value={formData.body}
@@ -51,7 +54,7 @@ const Comment = ({ user, comment, handleEdit, handleDelete }) => {
                   <button type="submit">Submit</button>
                 </form>
                ) : (
-                <p><span><strong>Comment:</strong></span> <span>{comment.body}</span></p>
+                <p><span><strong></strong></span> <span>{comment.body}</span></p>
                )}
             </div>
 
