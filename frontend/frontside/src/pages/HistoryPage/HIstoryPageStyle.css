@@ -1,0 +1,19 @@
+.history-section {
+    border: 1px solid silver;
+}
+
+.history-section h1 {
+    border: 1px solid red;
+}
+
+.form-container {
+    border: 1px solid purple;
+}
+
+.form-container input {
+    border: 1px solid green;
+}
+
+.comparison-container {
+    border: 1px solid salmon;
+}

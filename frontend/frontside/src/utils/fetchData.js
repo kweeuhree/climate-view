@@ -28,12 +28,13 @@ const getWeather = async (lat, lon, date) => {
 export const fetchData = async (city, date) => {
     console.log('attempting fetching city');
     // get latitude and longitude
-    const { latitude, longitude } = await getCoordinates(city);
+    const { id, latitude, longitude } = await getCoordinates(city);
     console.log(`latitude: ${latitude}, longitude: ${longitude}`);
 
     //fetch weather based on date
     const weatherData = await getWeather(latitude, longitude, date);
     console.log('weather data after fetching, ', weatherData);
     const avgTemp = weatherData.hourly.apparent_temperature[12];
-    return avgTemp;
+    const cityId = id;
+    return { cityId, avgTemp };
 };

@@ -19,3 +19,7 @@
   letter-spacing: 0.15vw;
 }
 
+section {
+  min-height: 40%;
+}
+

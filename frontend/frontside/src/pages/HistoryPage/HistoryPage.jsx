@@ -7,7 +7,9 @@ import './HistoryPageStyle.css';
 const HistoryPage = ({loggedIn, user}) => {
 
   const [city, setCity] = useState({
+    id: '',
     name: '',
+    date: '',
     temp: ''
   })
   const [cities, setCities] = useState([]);
@@ -46,9 +48,13 @@ const HistoryPage = ({loggedIn, user}) => {
     if(!city || !date) return;
 
     const cityData = await fetchData(city, date);
-    setCity({name: city, temp: cityData});
+    setCity({id: cityData.cityId, name: city, date: date, temp: cityData.avgTemp});
   }
 
+  const removeCity = (city) => {
+    const updatedCities = cities.filter((item) => item.id !== city.id);
+    setCities(updatedCities);
+  }  
 
 
   return (
@@ -56,7 +62,7 @@ const HistoryPage = ({loggedIn, user}) => {
     <section className='history-section'>
 
         {/* header */}
-      <header>Pick & Compare</header>
+      <header><h1>Pick & Compare</h1></header>
 
     {/* form */}
       <div className='form-container'>
@@ -70,7 +76,7 @@ const HistoryPage = ({loggedIn, user}) => {
     {/* comparison container */}
       <div className="comparison-container">
 
-       {cities?.length > 0 &&  <Cities cities={cities}/>}
+       {cities?.length > 0 &&  <Cities cities={cities} removeCity={removeCity}/>}
       </div>
 
 
