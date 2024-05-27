@@ -10,3 +10,8 @@
     border: 1px solid red;
     width: 50%;
 }
+
+.big-button {
+    width: 50%;
+    background-color: lime;
+}

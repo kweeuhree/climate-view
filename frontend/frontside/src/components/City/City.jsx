@@ -12,7 +12,7 @@ const City = ({city, removeCity}) => {
 
       <div>date: {city.date}</div>
       <div>{city.temp}</div>
-      <div onClick={()=>removeCity(city)}>✖</div>
+      <div className="big-button" onClick={()=>removeCity(city)}>✖</div>
     </div>
   )
 }

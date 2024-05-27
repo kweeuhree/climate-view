@@ -48,17 +48,18 @@ const HistoryPage = ({loggedIn, user}) => {
   }
 
   const getCity = async (formData) => {
-    if(!formData.city || !formData.date) return;
+    if(!formData.cityFormData || !formData.date) return;
     console.log('attempting submit with formData: ', formData);
     const cityData = await fetchData(formData);
     setCity({id: cityData.cityId, stateRegion: cityData.admin1, country: cityData.country, name: cityData.name, date: formData.date, temp: cityData.avgTemp});
   }
 
   const removeCity = (city) => {
-    const updatedCities = cities.filter((item) => {
+    console.log('attempting removing city');
+    const updatedCities = cities.filter(item => {
       const itemDate = new Date(item.date).getTime();
       const cityDate = new Date(city.date).getTime();
-      return item.id !== city.id || itemDate !== cityDate;
+      return !(item.id === city.id && itemDate === cityDate);
   });
     setCities(updatedCities);
   }  
