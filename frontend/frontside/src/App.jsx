@@ -11,7 +11,7 @@ import Footer from './components/NavBar&Footer/Footer';
 import UsefulLink from './components/UsefulLink/UsefulLink';
 //pages
 import HomePage from './pages/HomePage/HomePage';
-import HistoryPage from './pages/HistoryPage';
+import HistoryPage from './pages/HistoryPage/HistoryPage';
 import ImpactPage from './pages/ImpactPage';
 import SignUpPage from './pages/LoginPage/SignUpPage';
 import LogInPage from './pages/LoginPage/LogInPage';

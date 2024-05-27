@@ -75,13 +75,6 @@ const CommentSection = ({loggedIn, user}) => {
   
   return (
     <section className='comment-section'>
-             {loggedIn ? (
-                <div className='all-comments-container'>
-                  <CommentForm addNewComment={addNewComment} user={user} />
-                </div>
-              ) : (
-                <div>log in to leave a comment</div>
-              )}
 
               {/* all comments */}
                 <ul className='comment-list'>
@@ -96,9 +89,19 @@ const CommentSection = ({loggedIn, user}) => {
                         />
                       ))
                     ) : (
-                      <div>No comments yet</div>
+                      <div className='no-access-message'>No comments yet</div>
                     )}
                   </ul>
+
+            
+                  {loggedIn ? (
+                <div className='all-comments-container'>
+                  <CommentForm addNewComment={addNewComment} user={user} />
+                </div>
+              ) : (
+                <div className='no-access-message'>log in to leave a comment</div>
+              )}
+
     </section>
   );
 };

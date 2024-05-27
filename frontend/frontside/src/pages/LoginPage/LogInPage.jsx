@@ -66,7 +66,7 @@ const LogInPage = ({setLoggedIn, loggedIn, setUser}) => {
             />
             <button type='submit'>Submit</button>
       </form>
-      {!loginSuccess && <div>Failed to log in</div>}
+      {!loginSuccess && <div className='no-access-message'>Failed to log in</div>}
   </div>
   )
 }
