@@ -1,0 +1,74 @@
+.profile-section {
+    /* border: 1px solid purple; */
+}
+
+.top-profile {
+    /* border: 1px solid green; */
+}
+
+.top-profile h1 {
+    /* border: 1px solid red; */
+    margin-bottom: 10%;;
+}
+
+/* middle profile */
+.middle-profile {
+    /* border: 1px solid orange; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.profile-buttons {
+    /* border: 1px solid black; */
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    background: linear-gradient(146deg, rgba(46, 45, 45, 0.6) 6%, rgba(122,122,122,0.3) 60%, rgba(112, 112, 112, 0.8) 100%);
+}
+
+.profile-buttons > div {
+    /* border: 1px solid black; */
+    width: 45%;
+    margin-inline-start: 2%;
+    margin-block-end: 2%;
+    margin-block-start: 2%;
+}
+
+.update-name-container {
+    /* border: 1px solid blue; */
+}
+
+.update-name-container form {
+    border: 1px solid crimson;
+}
+
+.update-name-container input {
+    border: 1px solid white;
+}
+
+.consent-popup {
+    border: 1px solid slateblue;
+}
+
+.account-days {
+    /* border: 1px solid salmon; */
+    width: 30%;
+    text-align: end;
+    font-size: 3rem;
+    padding-inline-end: 10%;
+}
+
+.account-days > span {
+    font-size: 6rem;
+}
+
+.since-joining {
+    /* border: 1px solid blue; */
+    text-align: end;
+    font-size: 3rem;
+    padding-inline-end: 18%;
+}

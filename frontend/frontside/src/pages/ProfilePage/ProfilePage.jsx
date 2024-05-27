@@ -142,12 +142,12 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
       <section className='profile-section'>
         <div className="top-profile">
           <div><h1>hello, {user.name}</h1></div>
-          {/* display days dynamically */}
-          <div className="account-days">{displayDays} day(s) since creation</div>
         </div>
 
-        <div className="bottom-profile">
-          <div>
+        <div className="middle-profile">
+          <div className="profile-buttons">
+          <div className='update-name-container'>
+
             {/* display form input if 'update name' was clicked */}
             {editName ? (
               <form onSubmit={handleSubmit}>
@@ -163,38 +163,46 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
               <button onClick={handleClick}>update name</button>
             )}
           </div>
-          
-          <div>
-            {/* delete account button */}
-            <button onClick={handleConsent}>delete account</button>
-          </div>
 
-          {/* display pop up before deleting user account */}
-          { showPopUp &&   (
+            <div>
+              {/* logout button */}
+              <button onClick={handleLogout}>log out</button>
+            </div>
+            
+            <div>
+              {/* delete account button */}
+              <button onClick={handleConsent}>delete account</button>
+            </div>
 
-                <div className='consent-popup'>
-                  <div>Delete account?</div>
-                  <div>
-                    <button onClick={handleDelete}>
-                      Yes
-                    </button>
-                    <button onClick={()=> setShowPopUp(false)}>
-                      No
-                    </button>
+            {/* display pop up before deleting user account */}
+            { showPopUp &&   (
+
+                  <div className='consent-popup'>
+                    <div>Delete account?</div>
+                    <div>
+                      <button onClick={handleDelete}>
+                        Yes
+                      </button>
+                      <button onClick={()=> setShowPopUp(false)}>
+                        No
+                      </button>
+                    </div>
                   </div>
-                </div>
-               )
-              }
+                )
+                }
 
-          <div>
-            {/* logout button */}
-            <button onClick={handleLogout}>log out</button>
+
           </div>
-          
-        
+        {/* end of button container */}
 
-        </div>
+        {/* display days dynamically */}
+        <div className="account-days"><span>{displayDays}</span> day(s)</div>
 
+
+      </div>
+    {/* end of middle container */}
+
+        <div className="since-joining">since joining</div>
       </section>
     )
   }
