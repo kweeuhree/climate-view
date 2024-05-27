@@ -49,16 +49,16 @@ const capitalizeEach = (input) => {
     return inputCapitalized;
 }
 
-export const fetchData = async ({ country = null, stateRegion = null, city, date }) => {
-    console.log('attempting fetching city ', country, stateRegion, city, date);
+export const fetchData = async ({ countryFormData = null, stateRegion = null, cityFormData, date }) => {
+    console.log('attempting fetching city ', countryFormData, stateRegion, cityFormData, date);
     // get latitude and longitude
 
-    const countryCapitalized = country ? capitalizeEach(country) : null;
+    const countryCapitalized = countryFormData ? capitalizeEach(countryFormData) : null;
     const stateRegionCapitalized = stateRegion ? capitalizeEach(stateRegion) : null;
 
     console.log(countryCapitalized, stateRegionCapitalized);
-    const { id, latitude, longitude } = await getCoordinates(city, countryCapitalized, stateRegionCapitalized);
-    console.log('result: ', id, latitude, longitude);
+    const { id, admin1, country, name, latitude, longitude } = await getCoordinates(cityFormData, countryCapitalized, stateRegionCapitalized);
+    console.log('result: ', admin1, id, latitude, longitude);
     // { id, latitude, longitude }
     console.log(`latitude: ${latitude}, longitude: ${longitude}`);
 
@@ -67,5 +67,5 @@ export const fetchData = async ({ country = null, stateRegion = null, city, date
     console.log('weather data after fetching, ', weatherData);
     const avgTemp = weatherData.hourly.apparent_temperature[12];
     const cityId = id;
-    return { cityId, avgTemp };
+    return { cityId, avgTemp, admin1, country, name };
 };

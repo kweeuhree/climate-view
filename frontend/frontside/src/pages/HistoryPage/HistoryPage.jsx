@@ -8,15 +8,17 @@ const HistoryPage = ({loggedIn, user}) => {
 
   const [city, setCity] = useState({
     id: '',
+    stateRegion: '',
+    country: '',
     name: '',
     date: '',
     temp: ''
   })
   const [cities, setCities] = useState([]);
   const [formData, setFormData] = useState({
-    country: '', // country: country, stateRegion: admin1
+    countryFormData: '', // country: country, stateRegion: admin1
     stateRegion: '', 
-    city: '',
+    cityFormData: '',
     date: ''
   })
 
@@ -49,7 +51,7 @@ const HistoryPage = ({loggedIn, user}) => {
     if(!formData.city || !formData.date) return;
     console.log('attempting submit with formData: ', formData);
     const cityData = await fetchData(formData);
-    setCity({id: cityData.cityId, name: formData.city, date: formData.date, temp: cityData.avgTemp});
+    setCity({id: cityData.cityId, stateRegion: cityData.admin1, country: cityData.country, name: cityData.name, date: formData.date, temp: cityData.avgTemp});
   }
 
   const removeCity = (city) => {
@@ -72,9 +74,9 @@ const HistoryPage = ({loggedIn, user}) => {
       {/* form */}
       <div className='form-container'>
         <form onSubmit={handleSubmit}>
-          <input type="text" name="city" onChange={handleChange} value={formData.city} placeholder="city" required={true}/>
+          <input type="text" name="cityFormData" onChange={handleChange} value={formData.cityFormData} placeholder="city" required={true}/>
           <input type="text" name="stateRegion" onChange={handleChange} value={formData.stateRegion} placeholder='state or region'/>
-          <input type="text" name="country" onChange={handleChange} value={formData.country} placeholder='country'/>
+          <input type="text" name="countryFormData" onChange={handleChange} value={formData.countryFormData} placeholder='country'/>
           <input type="date" name="date" onChange={handleChange} value={formData.date} required={true}/>
           <button type="submit">Compare</button>
         </form>
