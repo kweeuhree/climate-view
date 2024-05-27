@@ -179,7 +179,7 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
 
                   <div className='consent-popup'>
                     <div>Delete account?</div>
-                    <div>
+                    <div className='pop-buttons'>
                       <button onClick={handleDelete}>
                         Yes
                       </button>
