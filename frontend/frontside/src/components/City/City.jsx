@@ -1,9 +1,9 @@
 import React from 'react';
-import './CityStyle.css';
+import './CitiesStyle.css';
 
-const City = () => {
+const City = ({city}) => {
   return (
-    <div>City</div>
+    <div>{city.name}</div>
   )
 }
 

@@ -1,11 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import City from '../../components/City/City';
+import Cities from '../../components/City/Cities';
+import { fetchData } from '../../utils/fetchData';
 import CommentSection from '../../components/CommentSection/CommentSection';
-import './HIstoryPageStyle.css';
+import './HistoryPageStyle.css';
 
 const HistoryPage = ({loggedIn, user}) => {
 
-  const [city, setCity] = useState([]);
+  const [cities, setCities] = useState([]);
+  const [formData, setFormData] = useState({
+    city: '',
+    date: ''
+  })
+
+  const handleChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value
+    })
+  }
+
+  useEffect(() => {
+    const getCity = async () => {
+      const cityData = await fetchData();
+      setCities(cityData);
+    }
+
+    getCity();
+  }, [cities])
+
+  const handleSubmit = () => {
+    console.log('attempting submit');
+  }
+
+
 
   return (
     <>
@@ -17,8 +44,8 @@ const HistoryPage = ({loggedIn, user}) => {
     {/* form */}
       <div className='form-container'>
         <form onSubmit={handleSubmit}>
-          <input type="text" />
-          <input type="date" />
+          <input type="text" onChange={handleChange} value={formData.city} />
+          <input type="date" onChange={handleChange} value={formData.date} />
           <button type="submit">Compare</button>
         </form>
       </div>
@@ -26,8 +53,7 @@ const HistoryPage = ({loggedIn, user}) => {
     {/* comparison container */}
       <div className="comparison-container">
 
-        <City data={data}/>
-        <City data={data}/>
+       {cities?.length > 0 &&  <Cities cities={cities}/>}
       </div>
 
 
