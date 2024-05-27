@@ -6,11 +6,25 @@ import './HistoryPageStyle.css';
 
 const HistoryPage = ({loggedIn, user}) => {
 
+  const [city, setCity] = useState({
+    name: '',
+    temp: ''
+  })
   const [cities, setCities] = useState([]);
   const [formData, setFormData] = useState({
     city: '',
     date: ''
   })
+
+  useEffect(() => {
+    if(city.name === '' || city.temp === '') return;
+
+    if(cities.length === 2) {
+      alert('cant add more than 2 cities');
+    } else {
+      setCities((prevCities) => [...prevCities, city]);
+    }
+  }, [city])
 
   const handleChange = (event) => {
     setFormData({
@@ -19,17 +33,20 @@ const HistoryPage = ({loggedIn, user}) => {
     })
   }
 
-  useEffect(() => {
-    const getCity = async () => {
-      const cityData = await fetchData();
-      setCities(cityData);
-    }
 
-    getCity();
-  }, [cities])
-
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
     console.log('attempting submit');
+    const city = formData.city;
+    const date = formData.date;
+    getCity(city, date);
+  }
+
+  const getCity = async (city, date) => {
+    if(!city || !date) return;
+
+    const cityData = await fetchData(city, date);
+    setCity({name: city, temp: cityData});
   }
 
 
@@ -44,8 +61,8 @@ const HistoryPage = ({loggedIn, user}) => {
     {/* form */}
       <div className='form-container'>
         <form onSubmit={handleSubmit}>
-          <input type="text" onChange={handleChange} value={formData.city} />
-          <input type="date" onChange={handleChange} value={formData.date} />
+          <input type="text" name="city" onChange={handleChange} value={formData.city} placeholder="enter city"/>
+          <input type="date" name="date" onChange={handleChange} value={formData.date} />
           <button type="submit">Compare</button>
         </form>
       </div>
