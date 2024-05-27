@@ -1,13 +1,23 @@
 // https://open-meteo.com/en/docs/historical-weather-api
 
-const getCoordinates = async (country, stateRegion, city) => {
+const getCoordinates = async (city, country = null, stateRegion = null) => {
     // send a request to geocoding api
     const response = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${city}`);
     const data = await response.json();
     const results = data.results;
-    console.log(country, stateRegion);
+    console.log(country, stateRegion, ' inside getCoordinates');
     console.log('results: ', results);
-    const location = results.find((item) => item.admin1 === stateRegion && item.country === country);
+    let location;
+
+    if(country && stateRegion) {
+        location = results.find((item) => item.admin1 === stateRegion && item.country === country);
+    } else if(country) {
+        location = results.find((item) => item.country === country);
+    } else if(stateRegion) {
+        location = results.find((item) => item.admin1 === stateRegion);
+    } else if (!country && !stateRegion) {
+        location = results[0];
+    }
     console.log(location, ' inside get coordinates');
     return location;
 } 
@@ -39,12 +49,15 @@ const capitalizeEach = (input) => {
     return inputCapitalized;
 }
 
-export const fetchData = async ({ country, stateRegion, city, date }) => {
+export const fetchData = async ({ country = null, stateRegion = null, city, date }) => {
     console.log('attempting fetching city ', country, stateRegion, city, date);
     // get latitude and longitude
-    const countryCapitalized = capitalizeEach(country);
-    const stateRegionCapitalized = capitalizeEach(stateRegion);
-    const { id, latitude, longitude } = await getCoordinates(countryCapitalized, stateRegionCapitalized, city);
+
+    const countryCapitalized = country ? capitalizeEach(country) : null;
+    const stateRegionCapitalized = stateRegion ? capitalizeEach(stateRegion) : null;
+
+    console.log(countryCapitalized, stateRegionCapitalized);
+    const { id, latitude, longitude } = await getCoordinates(city, countryCapitalized, stateRegionCapitalized);
     console.log('result: ', id, latitude, longitude);
     // { id, latitude, longitude }
     console.log(`latitude: ${latitude}, longitude: ${longitude}`);

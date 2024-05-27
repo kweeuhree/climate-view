@@ -53,7 +53,11 @@ const HistoryPage = ({loggedIn, user}) => {
   }
 
   const removeCity = (city) => {
-    const updatedCities = cities.filter((item) => item.id !== city.id && item.date !== city.date );
+    const updatedCities = cities.filter((item) => {
+      const itemDate = new Date(item.date).getTime();
+      const cityDate = new Date(city.date).getTime();
+      return item.id !== city.id || itemDate !== cityDate;
+  });
     setCities(updatedCities);
   }  
 
