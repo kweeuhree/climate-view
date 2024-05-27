@@ -23,3 +23,12 @@ section {
   min-height: 40%;
 }
 
+.display-flex {
+  display: flex;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+

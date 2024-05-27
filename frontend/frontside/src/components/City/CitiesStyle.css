@@ -1,5 +1,5 @@
 .cities-container {
-    border: 1px solid seagreen;
+    /* border: 1px solid seagreen; */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -7,11 +7,33 @@
 }
 
 .city-container {
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    flex-direction: column;
     width: 50%;
+    border-radius: 0.5rem;
+    background: linear-gradient(146deg, rgba(46, 45, 45, 0.5) 6%, rgba(122,122,122,0.4) 60%, rgba(112, 112, 112, 0.5) 100%);
+}
+
+.top-section {
+    width: 100%;
+    /* border: 1px solid purple; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.date-temp {
+    gap: 4vw;
+    font-size: 1.5rem;
 }
 
 .big-button {
-    width: 50%;
-    background-color: lime;
+    width: 96%;
+    background-color: rgba(27, 75, 27, 0.384);
+    transition: background-color 300ms 40ms linear;
+    color:blueviolet;
+}
+
+.big-button:hover {
+    background-color: rgba(89, 109, 89, 0.384);
 }

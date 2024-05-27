@@ -20,7 +20,7 @@
 }
 
 .history-section form {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 95%;
     height: 100%;
     display: flex;
@@ -46,7 +46,7 @@
 }
 
 .comparison-container {
-    border: 1px solid salmon;
+    /* border: 1px solid salmon; */
     margin-top: 3%;
     width: 90%;
 }

@@ -33,6 +33,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     min-height: 25vh;
+    border-radius: 0.5rem;
 }
 
 .comment-top {
@@ -50,10 +51,16 @@
 
 .comment-text {
     width: 70%;
-    /* border: 1px solid rgba(122,122,122,0.3); */
+    border: 1px solid rgba(122,122,122,0.3);
+    border-right: 1px transparent;
     text-align: start;
     padding-left: 5%;
-    
+    background-color: unset;
+    transition: background-color 300ms 40ms linear;
+}
+
+.comment-text:hover {
+    background-color: rgba(122,122,122,0.2);
 }
 
 .update-comment-form {
