@@ -14,6 +14,8 @@ const HistoryPage = ({loggedIn, user}) => {
   })
   const [cities, setCities] = useState([]);
   const [formData, setFormData] = useState({
+    country: '', // country: country, stateRegion: admin1
+    stateRegion: '', 
     city: '',
     date: ''
   })
@@ -38,21 +40,20 @@ const HistoryPage = ({loggedIn, user}) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('attempting submit');
-    const city = formData.city;
-    const date = formData.date;
-    getCity(city, date);
+    // country: country, stateRegion: admin1
+    // console.log('attempting submit with formData: ', formData);
+    getCity(formData);
   }
 
-  const getCity = async (city, date) => {
-    if(!city || !date) return;
-
-    const cityData = await fetchData(city, date);
-    setCity({id: cityData.cityId, name: city, date: date, temp: cityData.avgTemp});
+  const getCity = async (formData) => {
+    if(!formData.city || !formData.date) return;
+    console.log('attempting submit with formData: ', formData);
+    const cityData = await fetchData(formData);
+    setCity({id: cityData.cityId, name: formData.city, date: formData.date, temp: cityData.avgTemp});
   }
 
   const removeCity = (city) => {
-    const updatedCities = cities.filter((item) => item.id !== city.id);
+    const updatedCities = cities.filter((item) => item.id !== city.id && item.date !== city.date );
     setCities(updatedCities);
   }  
 
@@ -64,11 +65,13 @@ const HistoryPage = ({loggedIn, user}) => {
         {/* header */}
       <header><h1>Pick & Compare</h1></header>
 
-    {/* form */}
+      {/* form */}
       <div className='form-container'>
         <form onSubmit={handleSubmit}>
-          <input type="text" name="city" onChange={handleChange} value={formData.city} placeholder="enter city"/>
-          <input type="date" name="date" onChange={handleChange} value={formData.date} />
+          <input type="text" name="city" onChange={handleChange} value={formData.city} placeholder="city" required={true}/>
+          <input type="text" name="stateRegion" onChange={handleChange} value={formData.stateRegion} placeholder='state or region'/>
+          <input type="text" name="country" onChange={handleChange} value={formData.country} placeholder='country'/>
+          <input type="date" name="date" onChange={handleChange} value={formData.date} required={true}/>
           <button type="submit">Compare</button>
         </form>
       </div>
@@ -76,11 +79,19 @@ const HistoryPage = ({loggedIn, user}) => {
     {/* comparison container */}
       <div className="comparison-container">
 
-       {cities?.length > 0 &&  <Cities cities={cities} removeCity={removeCity}/>}
+       {cities?.length > 0 ? ( 
+          <Cities cities={cities} removeCity={removeCity}/>
+          ) : ( 
+          <div className='no-access-message font-size-2rem'>
+            pick two cities and a date as early as 1940
+          </div>
+       )}
+
       </div>
 
 
     </section>
+
     <CommentSection user={user} loggedIn={loggedIn}/>
     </>
   )

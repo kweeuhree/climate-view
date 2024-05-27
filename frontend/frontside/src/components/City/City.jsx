@@ -3,7 +3,7 @@ import './CitiesStyle.css';
 
 const City = ({city, removeCity}) => {
   return (
-    <div>
+    <div className='city-container'>
       <div>{city.name}</div>
       <div>date: {city.date}</div>
       <div>{city.temp}</div>

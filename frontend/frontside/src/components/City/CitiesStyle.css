@@ -1,0 +1,12 @@
+.cities-container {
+    border: 1px solid seagreen;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.city-container {
+    border: 1px solid red;
+    width: 50%;
+}
