@@ -4,6 +4,13 @@ import Header from '../Header';
 import './Iceberg.css'
 
 const Iceberg = () => {
+    
+    const imageSliderUrl = {
+        leftImage: `https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2024/05/iceberg_a-83_breaks_free/26094469-6-eng-GB/Iceberg_A-83_breaks_free_pillars.jpg`,
+        rightImage: `https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2024/05/thermal_image_of_a-83_iceberg/26095691-3-eng-GB/Thermal_image_of_A-83_iceberg_pillars.jpg`
+    };
+
+    const flags = ['Radar Image', 'Thermal Image'];
 
     // 
     const descriptions = {
@@ -30,7 +37,7 @@ const Iceberg = () => {
     };
 
   return (
-    <article classname="iceberg-article">
+    <article className="iceberg-article">
             <Header header={'cryosphere'} />
             <div className='description'>
                {descriptions.beforeImage}
@@ -55,7 +62,7 @@ const Iceberg = () => {
 
 
             {/* image slider container */}
-                <ImageSliderContainer />
+                <ImageSliderContainer images={imageSliderUrl} flags={flags} />
 
             {/* image slider context and description */}
             <div className='image-slider-context'>
