@@ -7,10 +7,14 @@ const HomePage = ({loggedIn, user}) => {
   return (
     <>
     <section className="section-home">
+
+      {/* image slider container */}
       <div className="image-slider-container">
           <ImageSliderContainer />
       </div>
     </section>
+
+    {/* comment section */}
     <CommentSection loggedIn={loggedIn} user={user}/>
     </>
   )
