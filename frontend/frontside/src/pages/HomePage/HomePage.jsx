@@ -9,9 +9,7 @@ const HomePage = ({loggedIn, user}) => {
     <section className="section-home">
 
       {/* image slider container */}
-      <div className="image-slider-container">
           <ImageSliderContainer />
-      </div>
     </section>
 
     {/* comment section */}

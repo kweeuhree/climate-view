@@ -207,7 +207,7 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
     )
   }
 // if user is not logged in do not display profile
-  return loggedIn ? profileDisplay() : (<div>restricted access</div>)
+  return loggedIn ? profileDisplay() : (<div className='no-access-message'>restricted access</div>)
   
 }
 

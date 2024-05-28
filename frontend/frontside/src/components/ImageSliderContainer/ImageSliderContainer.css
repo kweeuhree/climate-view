@@ -1,0 +1,29 @@
+.flag-container {
+    display: flex;
+    position: absolute;
+    z-index: 99;
+    top:55%;
+}
+
+.left { 
+    transform: translateX(-50%);
+}
+
+.right {
+    right: 0;
+    transform: translateX(50%);
+}
+
+.slider {
+    z-index: 6;
+}
+
+.flag {
+    font-size:1.1rem;
+    font-weight: 500;
+    width: 6vw;
+    border: 1px solid grey;
+    border-radius: 0.2vw;
+    background-color: rgba(34, 39, 39, 0.85);
+}
+

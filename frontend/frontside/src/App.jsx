@@ -19,7 +19,7 @@ function App() {
   // logged status state
   const [loggedIn, setLoggedIn] = useState(false);
   
-  //initialize user object
+  //initialize user object state
   const [user, setUser] = useState({
     id: null,
     name: '',
