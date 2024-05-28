@@ -49,8 +49,7 @@ const Iceberg = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 >{descriptions.top.linkText}</a>
-            </span>, 
-            {descriptions.bottom.beforeSpan}
+            </span>, {descriptions.bottom.beforeSpan}
             <span>
                 <a
                 href="https://landsat.gsfc.nasa.gov/satellites/landsat-8/landsat-8-mission-details/"

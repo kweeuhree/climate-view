@@ -1,0 +1,23 @@
+.ocean-article {
+    /* border: 1px solid red; */
+    min-height: fit-content;
+}
+
+.ocean-slider-context {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: end;
+    min-height: fit-content;
+}
+
+.ocean-slider-context div {
+    /* border: 1px solid blue; */
+    display: flex;
+    width: 65%;
+    font-size: 2.1rem;
+    text-align: right;
+    height: 13rem;
+    min-height: fit-content;
+    padding-block-start: 2%;
+    padding-block-end: 10%;
+}
