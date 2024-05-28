@@ -4,7 +4,7 @@
     z-index: 99;
     top:55%;
     opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 500ms 100ms ease, transform 200ms linear;
 }
 
 .left { 

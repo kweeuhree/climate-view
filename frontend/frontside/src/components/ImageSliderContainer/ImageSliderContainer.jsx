@@ -10,6 +10,7 @@ const ImageSliderContainer = () => {
 
 
   return (
+      
     <div className="image-slider-container"
       onMouseEnter={()=>setIsHovered(true)}
       onMouseLeave={()=>setIsHovered(false)}
@@ -28,6 +29,7 @@ const ImageSliderContainer = () => {
               leftImage="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2024/05/iceberg_a-83_breaks_free/26094469-6-eng-GB/Iceberg_A-83_breaks_free_pillars.jpg"
               rightImage="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2024/05/thermal_image_of_a-83_iceberg/26095691-3-eng-GB/Thermal_image_of_A-83_iceberg_pillars.jpg"
           />
+
     </div>
   )
 }

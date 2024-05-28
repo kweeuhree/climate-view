@@ -1,15 +1,13 @@
 import React from 'react';
 import './HomePage.css';
 import CommentSection from '../../components/CommentSection/CommentSection';
-import ImageSliderContainer from '../../components/ImageSliderContainer/ImageSliderContainer';
+import Iceberg from '../../components/Iceberg/Iceberg';
 
 const HomePage = ({loggedIn, user}) => {
   return (
     <>
     <section className="section-home">
-
-      {/* image slider container */}
-          <ImageSliderContainer />
+       <Iceberg />
     </section>
 
     {/* comment section */}

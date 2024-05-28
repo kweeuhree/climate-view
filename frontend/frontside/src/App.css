@@ -21,6 +21,7 @@
 
 section {
   min-height: 40%;
+  max-height: fit-content;
 }
 
 .display-flex {
