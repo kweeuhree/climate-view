@@ -4,6 +4,7 @@ import './CitiesStyle.css';
 const City = ({city, removeCity}) => {
   return (
     <div className='display-flex flex-center city-container'>
+      {/* display city */}
       <div className="top-section">
           <div>{city.name}</div>
           <div>
@@ -17,6 +18,7 @@ const City = ({city, removeCity}) => {
         <div className='font-size-2rem'>{city.temp}</div>
       </div>
 
+    {/* onclick pass information to a parent component */}
       <div className="big-button" onClick={()=>removeCity(city)}>✖</div>
     </div>
   )
