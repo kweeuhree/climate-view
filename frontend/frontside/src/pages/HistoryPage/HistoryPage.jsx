@@ -132,7 +132,7 @@ const HistoryPage = ({loggedIn, user}) => {
 
     </section>
 
-{/* comment section */}
+    {/* comment section */}
     <CommentSection user={user} loggedIn={loggedIn}/>
     </>
   )
