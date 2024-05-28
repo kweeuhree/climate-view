@@ -3,6 +3,8 @@
     position: absolute;
     z-index: 99;
     top:55%;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .left { 
@@ -27,3 +29,7 @@
     background-color: rgba(34, 39, 39, 0.85);
 }
 
+.soft-appear {
+    opacity: 1;
+    transform: translateY(50%);
+}

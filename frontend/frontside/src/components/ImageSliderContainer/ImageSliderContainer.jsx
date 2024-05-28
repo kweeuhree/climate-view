@@ -8,17 +8,18 @@ const ImageSliderContainer = () => {
 
     const flags = ['Radar Image', 'Thermal Image'];
 
+
   return (
     <div className="image-slider-container"
       onMouseEnter={()=>setIsHovered(true)}
       onMouseLeave={()=>setIsHovered(false)}
       >
-      <div className='flag-container left'>
-        <div className='flag' style={{ display: isHovered ? 'flex' : 'none'}}>{flags[0]}</div>
+      <div className={`flag-container left ${isHovered ? 'soft-appear' : ''}`}>
+        <div className='flag'>{flags[0]}</div>
       </div>
 
-      <div className="flag-container right">
-        <div className='flag' style={{ display: isHovered ? 'block' : 'none'}}>{flags[1]}</div>
+      <div className={`flag-container right ${isHovered ? 'soft-appear' : ''}`}>
+        <div className='flag'>{flags[1]}</div>
       </div>
 
 
