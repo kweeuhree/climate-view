@@ -1,0 +1,21 @@
+.description {
+    /* border: 1px solid green; */
+    font-size: 1.5rem;
+    background-color: rgba(44, 41, 38, 0.65);
+    text-align: left;
+    padding-inline-start: 3%;
+    padding-inline-end: 3%;
+}
+
+.image-slider-context {
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: end;
+    margin-block-start: 4%;
+    /* justify-content: flex-end; */
+}
+
+.margin-bottom {
+    margin-bottom: 10%;
+}
+

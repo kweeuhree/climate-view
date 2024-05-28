@@ -7,9 +7,10 @@ const HomePage = ({loggedIn, user}) => {
   return (
     <>
     <section className="section-home">
+    <div className='spacer'></div>
        <Iceberg />
     </section>
-
+    <div className='spacer'></div>
     {/* comment section */}
     <CommentSection loggedIn={loggedIn} user={user}/>
     </>

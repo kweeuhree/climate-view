@@ -33,3 +33,7 @@
     opacity: 1;
     transform: translateY(50%);
 }
+/* override default fixed height */
+[data-testid="container"] {
+    height: 80vh !important;
+}

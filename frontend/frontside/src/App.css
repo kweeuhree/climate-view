@@ -19,9 +19,23 @@
   letter-spacing: 0.15vw;
 }
 
+.letter-spacing5vw {
+  letter-spacing: 5vw;
+}
+
 section {
   min-height: 40%;
   max-height: fit-content;
+}
+
+article {
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+
+.spacer {
+  height: 25vh;
+
 }
 
 .display-flex {
