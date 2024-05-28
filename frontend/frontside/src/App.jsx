@@ -1,10 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState} from 'react';
 import { Route, Routes } from 'react-router-dom';
-// import { getWeather } from './utils/weather-api';
 import './App.css';
-//logos
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 //components
 import NavBar from './components/NavBar&Footer/NavBar';
 import Footer from './components/NavBar&Footer/Footer';
@@ -20,32 +16,28 @@ import ProfilePage from './pages/ProfilePage/ProfilePage';
 
 
 function App() {
-  const [weather, setWeather] = useState(null);
+  // logged status state
   const [loggedIn, setLoggedIn] = useState(false);
+  
+  //initialize user object
   const [user, setUser] = useState({
     id: null,
     name: '',
     email: ''
   });
 
-  // useEffect(() => {
-  //   const fetchWeather = async () => {
-  //     const weatherData = await getWeather();
-  //     setWeather(weatherData);
-  //   };
-  //   fetchWeather();
-  // }, []);
-
 
   return (
     <>
-
+      {/* fundraiser link */}
       <div className="head">
         <UsefulLink />
 
+      {/* navigation bar */}
         <NavBar loggedIn={loggedIn}/>
       </div>
 
+        {/* routes */}
         <Routes>
           <Route path="/" element={<HomePage />}/>
           <Route path='/dashboard' element={<HomePage loggedIn={loggedIn} user={user}/>} />
@@ -56,6 +48,7 @@ function App() {
           <Route path="/profile" element={<ProfilePage user={user} setUser={setUser} loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
         </Routes>
 
+        {/* footer (navigation bar) */}
       <Footer loggedIn={loggedIn} />
     </>
   )
