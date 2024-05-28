@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageSliderContainer from '../ImageSliderContainer/ImageSliderContainer';
+import Header from '../Header';
 import './Iceberg.css'
 
 const Iceberg = () => {
@@ -30,7 +31,7 @@ const Iceberg = () => {
 
   return (
     <article classname="iceberg-article">
-            <header><h1 className='letter-spacing5vw'>cryosphere</h1></header>
+            <Header header={'cryosphere'} />
             <div className='description'>
                {descriptions.beforeImage}
             </div>

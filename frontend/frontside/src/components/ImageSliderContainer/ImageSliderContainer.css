@@ -8,12 +8,12 @@
 }
 
 .left { 
-    transform: translateX(-50%);
+    transform: translateX(-45%);
 }
 
 .right {
     right: 0;
-    transform: translateX(50%);
+    transform: translateX(45%);
 }
 
 .slider {
