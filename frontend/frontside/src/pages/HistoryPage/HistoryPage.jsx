@@ -131,7 +131,7 @@ const HistoryPage = ({loggedIn, user}) => {
 
 
     </section>
-
+    <div className="spacer"></div>
     {/* comment section */}
     <CommentSection user={user} loggedIn={loggedIn}/>
     </>

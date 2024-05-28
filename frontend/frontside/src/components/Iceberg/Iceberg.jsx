@@ -17,7 +17,7 @@ const Iceberg = () => {
             from the`,
             linkText: `US Landsat 8 mission`
         },
-        afterImage:  `On May 20th, 2024, an iceberg measuring 380 square kilometers 
+        beforeImage:  `On May 20th, 2024, an iceberg measuring 380 square kilometers 
         (~147 mi2) broke off the Brunt Ice Shelf in Antarctica.`,
         context:[ `The ongoing loss of Antarctic ice is one of the clearest indications of 
                 rising global temperatures and a dire warning.`,
@@ -30,7 +30,10 @@ const Iceberg = () => {
 
   return (
     <article classname="iceberg-article">
-            <header><h1 className='letter-spacing5vw'>ICE</h1></header>
+            <header><h1 className='letter-spacing5vw'>cryosphere</h1></header>
+            <div className='description'>
+               {descriptions.beforeImage}
+            </div>
             <div className='description'>
             {descriptions.top.beforeSpan}<span>
                 <a 
@@ -48,9 +51,7 @@ const Iceberg = () => {
                 {descriptions.bottom.linkText}</a>
             </span>.
             </div>
-            <div className='description'>
-               {descriptions.afterImage}
-            </div>
+
 
             {/* image slider container */}
                 <ImageSliderContainer />
