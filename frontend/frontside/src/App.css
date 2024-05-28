@@ -4,7 +4,8 @@
   min-height: 95vh;
   background-color: rgba(170, 178, 182, 0.55);
   backdrop-filter: blur(4px);
-  box-shadow: 0px 43px 40px -7px rgba(255,255,255,0.4);
+  /* box-shadow: 0px 43px 40px -7px rgba(255,255,255,0.4); */
+  box-shadow: 4px 3px 14px 22px rgba(255,255,255,0.4);
   border-radius: 2em;
   margin: 0 auto;
   display: flex;
@@ -29,6 +30,7 @@ section {
 }
 
 article {
+  background-color: rgba(44, 41, 38, 0.65);
   border-top: 2px solid silver;
   border-bottom: 2px solid silver;
 }
