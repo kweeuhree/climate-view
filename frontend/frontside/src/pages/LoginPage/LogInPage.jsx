@@ -50,7 +50,7 @@ const LogInPage = ({setLoggedIn, loggedIn, setUser}) => {
       <Sphere /></h1></header>
       <form onSubmit={handleSubmit}>
          <input 
-             type='text' 
+             type='email' 
              name="email" 
              onChange={handleChange} 
              placeholder='email'
