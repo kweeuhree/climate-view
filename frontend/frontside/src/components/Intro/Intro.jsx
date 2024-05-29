@@ -8,11 +8,11 @@ const Intro = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-        setLoaded(true);
-      }, 100);
+      setLoaded(true);
+    }, 150);
 
-      return () => clearTimeout(timer);// clean up
-      }, []);
+    return () => clearTimeout(timer); //clean up
+  }, []);
 
   const descriptions = {
     intro1: `Widespread and rapid changes in the atmosphere, ocean, cryosphere and biosphere have
@@ -34,10 +34,8 @@ const Intro = () => {
         <div className='quarter-spacer'></div>
 
         <div className={`intro-text ${loaded ? 'fade-in' : ''}`}>
-
-            <div>{descriptions.intro1}</div>
-            <div>{descriptions.intro2}</div>
-
+            <div className='description'>{descriptions.intro1}</div>
+            <div className='description'>{descriptions.intro2}</div>
         </div>
 
         <div className="gif-div">  
@@ -60,7 +58,7 @@ const Intro = () => {
                         />
             </div>
         </div>
-        <div className="description flex-justify-right">Further reading: 
+        <div className="description">Further reading: 
            <span>
              <a 
                 target="_blank" 

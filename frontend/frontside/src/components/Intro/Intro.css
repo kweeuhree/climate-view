@@ -3,21 +3,26 @@
     place-items: center center;
 }
 
+.intro-article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .intro-text {
-    font-size: 1.3rem;
     margin-block-end: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 95%;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 1200ms ease;
+    /* border:1px solid purple; */
 }
 
 .fade-in {
     opacity: 1;
   }
 
-.intro-text div {
-    width: 40%;
-}
 
