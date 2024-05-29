@@ -34,7 +34,28 @@ const ImpactPage = ({loggedIn, user}) => {
 
   return (
    <>
-    <section className='impact-section'>ImpactPage</section>
+    <section className='impact-section'>
+      
+     <article className='impact-article'>
+
+     <div className="description">{text.intro}</div>
+
+      <div className="description">{text.sun}</div>
+
+      <div className="gases">
+        {Object.values(text.gas).map((item, index) => (
+          <div key={`gas-${index}`}>
+            <span>{item[0]}</span><br /><span>{item[1]}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className="description">{text.outro}</div>
+
+
+     </article>
+
+    </section>
     <CommentSection user={user} loggedIn={loggedIn}/>
    </>
   )

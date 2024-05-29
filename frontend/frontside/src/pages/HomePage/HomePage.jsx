@@ -22,7 +22,7 @@ const HomePage = ({loggedIn, user}) => {
     <div className='spacer'></div>
        <Ocean />
     </section>
-    <div className='spacer'></div>
+    <div className='quarter-spacer'></div>
     {/* comment section */}
     <CommentSection loggedIn={loggedIn} user={user}/>
     </>
