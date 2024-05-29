@@ -2,9 +2,10 @@
     display: flex;
     margin-block-end: 4%;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     /* border: solid green; */
     padding-inline-start:5%;
+    gap: 5%;
 }
 
 .map-image-container img {
@@ -20,43 +21,15 @@
     width: 30%;
 }
 
-/* .all-images-parent img {
-    width: 100%;
-    animation: move 800ms linear;
-    animation-fill-mode: forwards;
-  } */
-  
-.all-images-parent .image-parent img {
-    width: 100%;
-    animation: move linear; 
-    animation-duration: 3s;
-  }
-  
-  .all-images-parent .image-parent:nth-of-type(1) img {
-    animation-delay: 0000ms;
-  }
-  
-  .all-images-parent .image-parent:nth-of-type(2) img {
-    animation-delay: 3000ms;
-  }
-  
-  .all-images-parent .image-parent:nth-of-type(3) img {
-    animation-delay: 6000ms;
-  }
-  
-  .all-images-parent .image-parent:nth-of-type(4) img {
-    animation-delay: 9000ms;
-  }
-  
-
-@keyframes move {
-    0% {transform: translateX(0%);}
-    33% {transform: translateX(3%);}
-    66% {transform: translateX(-1%);}
-    100% {transform: translateX(0%);}
+.temp-context {
+    width: 40%;
 }
 
-.image-parent {
+.all-images-parent .image-parent img {
+    width: 100%;
+  }
+
+  .image-parent {
     display:flex;
     position:relative;
     z-index:1;
@@ -77,4 +50,35 @@
 .temp-increase div {
     display: flex-inline;
 }
+
+/* keyframes */
+.animate {
+    animation: move linear; 
+    animation-duration: 2.5s;
+}
+  
+  .all-images-parent .image-parent:nth-of-type(1) {
+    animation-delay: 0000ms;
+  }
+  
+  .all-images-parent .image-parent:nth-of-type(2) {
+    animation-delay: 2500ms;
+  }
+  
+  .all-images-parent .image-parent:nth-of-type(3) {
+    animation-delay: 5500ms;
+  }
+  
+  .all-images-parent .image-parent:nth-of-type(4) {
+    animation-delay: 8500ms;
+  }
+  
+
+@keyframes move {
+    0% {transform: translateX(0%);}
+    33% {transform: translateX(3%);}
+    66% {transform: translateX(-1%);}
+    100% {transform: translateX(0%);}
+}
+
 

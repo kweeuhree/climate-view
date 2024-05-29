@@ -59,3 +59,15 @@ article {
   justify-content: center;
 }
 
+.description {
+  /* border: 1px solid green; */
+  font-size: 1.5rem;
+  text-align: left;
+  padding-inline-start: 3%;
+  padding-inline-end: 3%;
+  transition: background-color 400ms 30ms linear;
+}
+
+.description:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
