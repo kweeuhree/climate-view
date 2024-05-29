@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-import TempVideo from '../assets/MODAL2_M_CLD_FR-MOD_LSTAD_M.mp4';
+import TempVideo from '../../assets/MODAL2_M_CLD_FR-MOD_LSTAD_M.mp4';
 
 const Video = () => {
 
   return (
-    <div>
+    <div className='video-parent'>
       <ReactPlayer 
         url={TempVideo}
         width="600"

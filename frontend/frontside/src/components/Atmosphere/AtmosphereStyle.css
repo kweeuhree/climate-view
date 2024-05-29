@@ -1,0 +1,4 @@
+.video-parent {
+    border: 1px solid purple;
+    display: flex;
+}
