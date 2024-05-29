@@ -1,4 +1,9 @@
-.video-parent {
-    border: 1px solid purple;
+.map-image-container {
     display: flex;
+    border: 1px purple;
+    margin-block-end: 4%;
+}
+
+.map-image-container img {
+   filter: brightness(0.9) contrast(0.9);
 }
