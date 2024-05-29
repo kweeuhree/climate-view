@@ -13,8 +13,15 @@ const Atmosphere = () => {
         context: `Carbon dioxide in the atmosphere warms the planet, 
         causing climate change.`
     };
-    const images = [image15, image20, image30, image40];
-    const imagesJSX = images.map((item, index) => (<div key={`image-${index}`} className='image-parent'><img src={item} alt="Earth map with temperatures rising" /></div>));
+    const images = [[image15, '1.5'], [image20, '2'], [image30, '3'], [image40, '4']];
+    const imagesJSX = images.map((item, index) => (
+      <div key={`image-${index}`} className='image-parent'>
+
+        <div className='temp-increase'><div>{item[1]}°C</div></div>
+        <img src={item[0]} alt={`Earth map with temperature increased by ${item[1]}C`} />
+        
+      </div>
+    ));
 
   return (
     <article className='atmospehere-article'>
