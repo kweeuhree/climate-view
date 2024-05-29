@@ -14,7 +14,7 @@ const Atmosphere = () => {
         causing climate change.`
     };
     const images = [image15, image20, image30, image40];
-    const imagesJSX = images.map((item) => (<div className='image-parent'><img src={item} alt="Earth map with temperatures rising" /></div>));
+    const imagesJSX = images.map((item, index) => (<div key={`image-${index}`} className='image-parent'><img src={item} alt="Earth map with temperatures rising" /></div>));
 
   return (
     <article className='atmospehere-article'>

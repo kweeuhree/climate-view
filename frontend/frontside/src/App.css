@@ -24,6 +24,11 @@
   letter-spacing: 5vw;
 }
 
+.flex-justify-right {
+  display: flex;
+  justify-content: end;
+}
+
 section {
   min-height: 40%;
   max-height: fit-content;

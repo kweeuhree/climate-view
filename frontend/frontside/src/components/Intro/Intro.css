@@ -1,0 +1,23 @@
+.gif-div {
+    display: flex;
+    place-items: center center;
+}
+
+.intro-text {
+    font-size: 1.3rem;
+    margin-block-end: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+    opacity: 1;
+  }
+
+.intro-text div {
+    width: 40%;
+}
+
