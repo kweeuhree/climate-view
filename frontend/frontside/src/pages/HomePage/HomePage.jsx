@@ -4,11 +4,14 @@ import CommentSection from '../../components/CommentSection/CommentSection';
 import Iceberg from '../../components/Iceberg/Iceberg';
 import Amazon from '../../components/Amazon/Amazon';
 import Ocean from '../../components/Ocean/Ocean';
+import Atmosphere from '../../components/Atmosphere/Atmosphere';
 
 const HomePage = ({loggedIn, user}) => {
   return (
     <>
     <section className="section-home">
+      < Atmosphere />
+    <div className="spacer"></div>
       <Iceberg />
     <div className="spacer"></div>
       <Amazon />
