@@ -55,8 +55,3 @@
 .font-size-2rem {
     font-size: 2rem;
 }
-
-.input-flex {
-    display: flex;
-    flex-direction: column;
-}
