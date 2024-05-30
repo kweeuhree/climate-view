@@ -45,7 +45,7 @@ const SignUpPage = () => {
             setSignUpMessage(true);
             //reset form data
             setFormData({name:'', email: '', password: ''});
-            navigate('/login'); //redirect to login page
+            navigate('/log-in'); //redirect to login page
 
            } else {
             console.log('failed to sign up');

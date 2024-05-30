@@ -41,31 +41,6 @@
      outline:none;
  }
 
-  
- /* @keyframes ripple {
-    0% {
-        box-shadow: 
-            0 0 0 0 rgba(169, 199, 199, 0.35),
-            0 0 0 1px rgba(169, 199, 199, 0.35),
-            0 0 0 3px rgba(169, 199, 199, 0.35), 
-            0 0 0 5px rgba(169, 199, 199, 0.35); 
-    }
-    100% {
-        box-shadow: 
-            0 0 0 0 rgba(169, 199, 199, 0.2), 
-            0 0 0 4px rgba(169, 199, 199, 0.2), 
-            0 0 0 20px rgba(169, 199, 199, 0), 
-            0 0 0 20vw rgba(169, 199, 199, 0); 
-    }
-} */
-
-
-  
-/* sign up only */
-/* .sign-up {
-    position: relative;
-    z-index:2;
-} */
 
 .sign-up h1, .log-in h1 {
     position: relative;    
