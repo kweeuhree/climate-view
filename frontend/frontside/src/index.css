@@ -29,7 +29,16 @@ body {
   min-width: 320px;
   min-height: 100vh;
   /* border: 1px solid yellow; */
-  background-image: url("https://images2.alphacoders.com/260/thumb-1920-260750.jpg");
+  /* background-image: url("https://images2.alphacoders.com/260/thumb-1920-260750.jpg"); */
+  background-image: url('https://neo.gsfc.nasa.gov/archive/rgb/MYDAL2_E_AER_RA/MYDAL2_E_AER_RA_2011-09-14.PNG');
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-color: #1a1a1a;
 }
 
 h1 {

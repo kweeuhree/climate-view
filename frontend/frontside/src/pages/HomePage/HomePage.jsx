@@ -11,7 +11,6 @@ const HomePage = ({loggedIn, user}) => {
   return (
     <>
     <section className="section-home">
-    <div className='quarter-spacer'></div>
       <Intro />
     <div className="spacer"></div>      
       < Atmosphere />

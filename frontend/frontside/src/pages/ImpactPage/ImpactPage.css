@@ -5,6 +5,7 @@
 
 .impact-article {
     /* border: solid 1px red; */
+    padding-block-start: 2%;
 }
 
 .sun-wrapper {
@@ -18,20 +19,21 @@
     background-repeat: no-repeat;
     position: absolute;
     z-index: -1;
-    top: 0;
-    left: 60%;
-    width: 50%;
+    top: 20%;
+    left: 65%;
+    width: 100%;
     height: 100%;
     animation: rotate 4s linear;
+    padding-block-end: 10%;
  }
 
  @keyframes rotate {
     from {
-      transform: translateY(-1%);
+      transform: translateY(-40%) rotate3d(10deg) translateX(-10%) scale(0.9);
       opacity: 0;
     }
     to {
-      transform: translateY(0%);
+      transform: translateY(0%) rotate3d(0deg) translateX(0%) scale(1);
       opacity: 1;
     }
 }
@@ -47,10 +49,11 @@
     position:relative;
 }
 
-.gases::before {
+/* .gases > div::before {
     content: '';
+    /* background-image: url('https://i.gifer.com/2iiG.gif'); 
     background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcW1rbXg4eWE4dGJjbTF0amk5ZXFvdWV6YzcwdTk1ODB2d2x6a21xZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ftfVpeWsm95QgGfOZ8/giphy.webp');
-    background-color: rgba(0, 0, 0, 0.623);
+    /* background-color: rgba(0, 0, 0, 0.623); 
     mix-blend-mode:soft-light;
     z-index:-1;
     position:absolute;
@@ -58,14 +61,27 @@
     left: 0;
     width: 100%;
     height: 100%;
-}
+} */
 
 .gases > div {
-    border: 1px solid rgb(31, 77, 20);
+    border: 1px solid rgb(77, 20, 74);
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
     width: 58%;
     line-height: 3.4vh;
+    height: 30vh;
     margin:0.5%;
     padding:1%;
+    transition: background-color 200ms 40ms linear;overflow:none;
+    mix-blend-mode:difference;
+    background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcW1rbXg4eWE4dGJjbTF0amk5ZXFvdWV6YzcwdTk1ODB2d2x6a21xZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ftfVpeWsm95QgGfOZ8/giphy.webp');
+}
+
+.gases > div:hover {
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 .gases > div:nth-child(even) {
@@ -85,6 +101,11 @@
     letter-spacing: 0.5vw;
     line-height: 5vh;
     font-weight: 500;
+    transition: letter-spacing 400ms 40ms linear;
+}
+
+.gases > div:hover > span:first-of-type {
+    letter-spacing: 0.6vw;
 }
 
 .impact-article .description:last-of-type {

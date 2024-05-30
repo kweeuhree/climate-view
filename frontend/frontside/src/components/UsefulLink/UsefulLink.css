@@ -1,6 +1,8 @@
 .fundraiser-container {
     /* border: 1px solid rgba(148, 148, 148, 0.555); */
     background-color: rgba(250, 235, 215, 0.25);
+    border-top-left-radius: 2em; 
+    border-top-right-radius: 2em; 
     text-align: center;
     font-size: 1.1rem;
     transition: background-color 300ms 40ms linear;

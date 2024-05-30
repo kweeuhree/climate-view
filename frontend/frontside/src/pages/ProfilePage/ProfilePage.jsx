@@ -5,13 +5,13 @@ import './ProfilePage.css';
 
 const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
 
-  const [editName, setEditName] = useState(false); // state for editing user name
+  // const [editName, setEditName] = useState(false); // state for editing user name
   const [displayDays, setDisplayDays] = useState(0); // state for dynamic rendering of days since creation of user account
   const [showPopUp, setShowPopUp] = useState(false); // state for a confirmation of account deletion
   // state for a name changing form
-  const [formData, setFormData] = useState({
-    name: user.name
-  })
+  // const [formData, setFormData] = useState({
+  //   name: user.name
+  // })
 
   const navigate = useNavigate(); // redirect to a different address
 
@@ -43,41 +43,41 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
     return result; // return days
   }
 
-  const handleClick = () => {
-    setEditName(true); // display input form
-  }
+  // const handleClick = () => {
+  //   setEditName(true); // display input form
+  // }
 
-  const handleChange = (event) => {
-    // dynamically set form data
-    setFormData({
-      ...formData, 
-      [event.target.name]: event.target.value
-    })
-  }
+  // const handleChange = (event) => {
+  //   // dynamically set form data
+  //   setFormData({
+  //     ...formData, 
+  //     [event.target.name]: event.target.value
+  //   })
+  // }
 
-  const handleSubmit = async (event) => {
-    console.log('attempting put request, formData: ', formData);
-    event.preventDefault();
-    // try updating username based on form data information
-    try {
-      const response = await fetch(`http://localhost:3000/profile/${user.id}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-      console.log('response: ', response);
-      if(response.ok) {
-        const data = await response.json();
-        console.log(data, ' data inside handleSubmit of ProfilePage');
-        const updatedUser = data.updatedUser;
-        setUser(updatedUser); // update user object
-        setFormData({name:''}); // reset form 
-        setEditName(prevState => !prevState); // stop displaying input form
-      }
-    } catch (error) { //catch and log error
-      console.log('inside handleSubmit of ProfilePage ', error);
-    }
-  }
+  // const handleSubmit = async (event) => {
+  //   console.log('attempting put request, formData: ', formData);
+  //   event.preventDefault();
+  //   // try updating username based on form data information
+  //   try {
+  //     const response = await fetch(`http://localhost:3000/profile/${user.id}`, {
+  //       method: 'PUT',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify(formData)
+  //     });
+  //     console.log('response: ', response);
+  //     if(response.ok) {
+  //       const data = await response.json();
+  //       console.log(data, ' data inside handleSubmit of ProfilePage');
+  //       const updatedUser = data.updatedUser;
+  //       setUser(updatedUser); // update user object
+  //       setFormData({name:''}); // reset form 
+  //       setEditName(prevState => !prevState); // stop displaying input form
+  //     }
+  //   } catch (error) { //catch and log error
+  //     console.log('inside handleSubmit of ProfilePage ', error);
+  //   }
+  // }
 
   const handleConsent = () => {
     //display a confirmation window before deleting user account
@@ -146,23 +146,23 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
 
         <div className="middle-profile">
           <div className="profile-buttons">
-          <div className='update-name-container'>
+          {/* <div className='update-name-container'> */}
 
             {/* display form input if 'update name' was clicked */}
-            {editName ? (
+            {/* {editName ? (
               <form onSubmit={handleSubmit}>
-                {/* handle change of the form */}
+                {/* handle change of the form 
                 <input type="text" name='name' placeholder='enter new name' value={formData.name} onChange={handleChange}/>
-                {/* submit name change */}
+                {/* submit name change 
                 <button type="submit">Submit</button>
-                {/* stop displaying form input without changing the name */}
+                {/* stop displaying form input without changing the name 
                 <button onClick={()=>setEditName(false)}>Cancel</button>
               </form>
-            ) : (
+            ) : ( 
               // update name button
-              <button onClick={handleClick}>update name</button>
+             null // <button onClick={handleClick}>update name</button>
             )}
-          </div>
+          </div> */}
 
             <div>
               {/* logout button */}

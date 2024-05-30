@@ -23,6 +23,7 @@
 .profile-buttons {
     /* border: 1px solid black; */
     width: 35%;
+    height: 15vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,17 +88,17 @@
     /* border: 1px solid salmon; */
     width: 30%;
     text-align: end;
-    font-size: 3rem;
+    font-size: 6rem;
     padding-inline-end: 10%;
 }
 
 .account-days > span {
-    font-size: 6rem;
+    font-size: 8rem;
 }
 
 .since-joining {
     /* border: 1px solid blue; */
     text-align: end;
-    font-size: 3rem;
+    font-size: 4rem;
     padding-inline-end: 18%;
 }

@@ -107,8 +107,8 @@ const HistoryPage = ({loggedIn, user}) => {
           {/* handle change dynamically with handleChange */}
           <input type="text" name="cityFormData" onChange={handleChange} value={formData.cityFormData} placeholder="city" required={true}/>
           {/* stateRegion and country are optional */}
-          <input type="text" name="stateRegion" onChange={handleChange} value={formData.stateRegion} placeholder='state or region'/>
-          <input type="text" name="countryFormData" onChange={handleChange} value={formData.countryFormData} placeholder='country'/>
+          <input type="text" id="stateRegion" name="stateRegion" onChange={handleChange} value={formData.stateRegion} placeholder='state or region'/>
+          <input type="text" id="country" name="countryFormData" onChange={handleChange} value={formData.countryFormData} placeholder='country'/>
           <input type="date" name="date" onChange={handleChange} value={formData.date} required={true}/>
           <button type="submit">Compare</button>
         </form>
@@ -129,9 +129,9 @@ const HistoryPage = ({loggedIn, user}) => {
 
       </div>
 
-
+      <div className="spacer"></div>
     </section>
-    <div className="spacer"></div>
+   
     {/* comment section */}
     <CommentSection user={user} loggedIn={loggedIn}/>
     </>
