@@ -4,16 +4,19 @@ import Header from '../Header';
 
 const Intro = () => {
 
+  // set state to trigger onload timer
   const [loaded, setLoaded] = useState(false);
 
+  // onmount set a timer to trigger soft appearance of text
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLoaded(true);
-    }, 150);
+      setLoaded(true); // trigger new style
+    }, 150); // timeout
 
-    return () => clearTimeout(timer); //clean up
+    return () => clearTimeout(timer); // clean up
   }, []);
 
+  // text to display on the page
   const descriptions = {
     intro1: `Widespread and rapid changes in the atmosphere, ocean, cryosphere and biosphere have
     occurred. Human-caused climate change is already affecting many weather and climate
@@ -30,9 +33,11 @@ const Intro = () => {
   return (
     <article className="intro-article">
 
+        {/* header */}
         <Header header={'climate view'} />
         <div className='quarter-spacer'></div>
 
+        {/* main article, apply style dynamically */}
         <div className={`intro-text ${loaded ? 'fade-in' : ''}`}>
             <div className='description'>{descriptions.intro1}</div>
             <div className='description'>{descriptions.intro2}</div>
@@ -43,6 +48,7 @@ const Intro = () => {
             <div className="description">
             {descriptions.afterImage}
                 <span>
+                  {/* external link */}
                 <a 
                     target="_blank" 
                     rel="noreferrer noopener"
@@ -51,6 +57,7 @@ const Intro = () => {
                 </span>
             </div>
 
+            {/* gif */}
             <div className="gif">
                     <img 
                             src='https://media.licdn.com/dms/image/D5610AQEii3Qb0GPARg/image-shrink_800/0/1701811163703?e=1717549200&v=beta&t=CCQZGtUW90F28BFJj9ck8c0d2LJF2MRs0y_adEfelEM' 
@@ -60,6 +67,7 @@ const Intro = () => {
         </div>
         <div className="description">Further reading: 
            <span>
+            {/* external link */}
              <a 
                 target="_blank" 
                 rel="noreferrer noopener"
