@@ -2,7 +2,7 @@
 
 <p>This repository contains code for a full stack application meant to provide an overview of of Earth's climate state as of 2024. The app is following an MVC(Model-View-Controller) architecture.</p>
 
-<p>Users can create an account and leave comments once logged in. The appliation keeps track of days since the user joined.</p>
+<p>Users can create an account and leave comments once logged in. The application keeps track of days since the user joined.</p>
 
 <h4>Stack:</h4>
 <ul>
@@ -16,10 +16,9 @@
 
 <h3>Backend</h3>
 <p>APIs are created following best practices of REST.</p>
-<p>Express simplifies creation of server-side logic and handles middleware calls. Express routers are looking for a request body params to simplify extraction of user or Comment ID:
-<br><br>
-<code>
-router.param('id', async (req, res, next, id) => {<br>
+<p>Express simplifies creation of server-side logic and handles middleware calls. Express routers are looking for a request body params to simplify extraction of User or Comment ID:
+<br>
+<code>router.param('id', async (req, res, next, id) => {<br>
 &nbsp;&nbsp;try {<br>
 &nbsp;&nbsp;const found = await User.findById(id);<br>
 &nbsp;&nbsp;&nbsp;if (found) {<br>
@@ -32,10 +31,9 @@ router.param('id', async (req, res, next, id) => {<br>
 &nbsp;&nbsp;} catch (error) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;res.status(500);<br>
 &nbsp;&nbsp;}<br>
-&nbsp;});<br>
-</code></p>
+&nbsp;});<br></code></p>
 
-<p>MongoDB is used to ensure persistance of user profiles and user comments. Full CRUD system is set up to allow users create, update and delete comments that are attache to the user ID.</p>
+<p>MongoDB is used to ensure persistance of user profiles and user comments. Full CRUD system is set up to allow users read, create, update and delete comments that are attached to their user ID.</p>
 <p>Mongoose is used for an efficient data modeling.</p>
 <p>User authorization is performed using a cookie parser, JWT and bcrypt.</p>
 
@@ -45,8 +43,7 @@ router.param('id', async (req, res, next, id) => {<br>
 <p>Animations, gifs, videos, and images are used throughout the application in order to provide better user experience.</p>
 <p><b>Intro</b> component is using useEffect in order to fire off a timer that will trigger a soft appearrance of text. Onmount of the component, the timer will trigger dynamic style application, clean up function ensures proper memory management by clearing the timer:
 <br>
-<code>
-&nbsp;const [loaded, setLoaded] = useState(false);<br>
+<code>&nbsp;const [loaded, setLoaded] = useState(false);<br>
 &nbsp;useEffect(() => {<br>
 &nbsp;&nbsp;const timer = setTimeout(() => {<br>
 &nbsp;&nbsp;setLoaded(true); // trigger new style<br>
@@ -55,11 +52,9 @@ router.param('id', async (req, res, next, id) => {<br>
 &nbsp;}, []);
 &nbsp;
 <br><br>
-className={`intro-text ${loaded ? 'fade-in' : ''}`}
- </code><br></p>
-<p><b>ImageSliderContainer</b> is create with <code>react-compare-image</code> library to streamline to development process. Inside ImageSliderContainer hover effects are achieved thorugh state. Hovered state is initialed as false, state is watching for a mouse action, which triggers changes in state, which consequently produces a hover effect:
-<br>
-<code>const [isHovered, setIsHovered] = useState(false);</code>
+className={`intro-text ${loaded ? 'fade-in' : ''}`} </code><br></p>
+<p><b>ImageSliderContainer</b> is created with <code>react-compare-image</code> library to streamline the development process. Inside ImageSliderContainer hover effects are achieved thorugh state. Hovered state is initialized as false, state is watching for a mouse action, which triggers changes in state, and consequently produces a hover effect:
+<br><code>const [isHovered, setIsHovered] = useState(false);</code>
 <br>
 <code> 
 &nbsp;onMouseEnter={()=>setIsHovered(true)}<br>
@@ -67,8 +62,7 @@ className={`intro-text ${loaded ? 'fade-in' : ''}`}
 
 <p><b>Atmosphere</b> component is relying on useRef, useEffect and IntersectionObserver to track the component being scrolled into view, which consequently triggers animations within the component, clean up function ensures that we stop observing in order to prevent memory leaks:
 <br>
-<code>
-&nbsp;const [isInView, setIsInView] = useState(false);<br>
+<code>&nbsp;const [isInView, setIsInView] = useState(false);<br>
 &nbsp;const imagesParentRef = useRef(null);<br>
 &nbsp;useEffect(() => {<br>
 &nbsp;&nbsp;const observer = new IntersectionObserver((entries) => {<br>
@@ -94,8 +88,7 @@ className={`image-parent  ${isInView ? 'animate' : ''}`}</code></p>
 <p><b>HistoryPage</b> component is using data fetched from open-meteo.com and displays cities that user picks. Application is interacting with the user via a form. State and Country parameters are made optional in order to let user pick how they want to search their location. Behind the hood, the app will capitalize user input in order to make state and country optional.
 <br> Picked city is added to a comparison container, which is also happening thorugh state of currently picked city, as well as both cities. Once cities array stops being empty, Cities component will display city/cities:
 <br>
-<code>
-&nbsp;const [city, setCity] = useState({<br>
+<code>&nbsp;const [city, setCity] = useState({<br>
 &nbsp;&nbsp;id: '',<br>
 &nbsp;&nbsp;stateRegion: '',<br>
 &nbsp;&nbsp;country: '',<br>
