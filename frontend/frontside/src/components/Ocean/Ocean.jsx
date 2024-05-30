@@ -5,6 +5,7 @@ import './Ocean.css';
 
 const Ocean = () => {
 
+    // text to display on the page
     const descriptions = {
         beforeImage:`As greenhouse gases trap more energy from the sun, 
         the oceans are absorbing more heat, resulting in an increase 
@@ -24,23 +25,30 @@ const Ocean = () => {
         and the climate that have already occurred.`
     };
 
+    // images to pass into slider
     const imageSliderUrl = {
         leftImage: `https://biospherefoundation.org/wp-content/uploads/2014/09/1975-1024x670.jpg`,
         rightImage: `https://biospherefoundation.org/wp-content/uploads/2014/09/2014-1024x683.jpg`
     };
-
+    //flags for images
     const flags = ['Before', 'After'];
 
 
   return (
     <article className="ocean-article">
+        {/* header */}
         <Header header={'ocean'} />
 
+        {/* main article */}
         <div className="description">{descriptions.beforeImage}</div>
+
          {/* image slider container */}
          <ImageSliderContainer images={imageSliderUrl} flags={flags} />
+
          <div className="quarter-spacer"></div>
+
          <div className="description">{descriptions.afterImage}</div>
+         
         <div className="ocean-slider-context">
             <div className="description">{descriptions.context}</div>
         </div>
