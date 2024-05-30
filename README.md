@@ -102,4 +102,4 @@ className={`image-parent  ${isInView ? 'animate' : ''}`}</code></p>
 &nbsp;cities?.length > 0 ? ( <br>
 &nbsp;&nbsp;< Cities cities={cities} removeCity={removeCity} />
 )</code></p>
-![Compare cities](frontend/images/screenshots/history.png)
+![Compare cities](https://github.com/kweeuhree/climate-view/blob/master/frontend/images/screenshots/history.png?raw=true)
