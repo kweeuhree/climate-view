@@ -5,6 +5,7 @@ import './ImpactPage.css';
 
 const ImpactPage = ({loggedIn, user}) => {
 
+  //text to display on the page
   const text = {
     intro: `The greenhouse effect is essential to life on Earth, 
     but human-made emissions in the atmosphere are trapping and slowing heat loss to space.`,
@@ -39,12 +40,13 @@ const ImpactPage = ({loggedIn, user}) => {
       
      <article className='impact-article'>
 
+    {/* sun image inside sun wrapper */}
     <div className="sun-wrapper">
       <div className="description">{text.intro}</div>
       <div className="description">{text.sun}</div>
 
     </div>
-
+      {/* display gases array */}
       <div className="gases">
         {Object.values(text.gas).map((item, index) => (
           <div key={`gas-${index}`}>
@@ -59,6 +61,7 @@ const ImpactPage = ({loggedIn, user}) => {
      </article>
 
     </section>
+    {/* comment section */}
     <CommentSection user={user} loggedIn={loggedIn}/>
    </>
   )
