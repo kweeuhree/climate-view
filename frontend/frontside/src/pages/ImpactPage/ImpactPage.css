@@ -1,16 +1,13 @@
 
 .impact-section {
-    /* border: solid 1px salmon; */
 }
 
 .impact-article {
-    /* border: solid 1px red; */
     padding-block-start: 2%;
 }
 
 .sun-wrapper {
     position: relative;
-    /* border: 2px solid purple; */
 }
 
  .sun-wrapper::before {
@@ -40,7 +37,6 @@
 
 
 .gases {
-    /* border: 1px solid pink; */
     display: flex;
     flex-direction: column;
     padding-inline-start: 4%;
@@ -85,13 +81,8 @@
 }
 
 .gases > div:nth-child(even) {
-    /* border: 1px solid orange; */
     align-self: self-end;
 }
-
-/* .gases > div:nth-child(odd) {
-    border: 1px solid blue;
-} */
 
 /* gas title */
 .gases > div > span:first-of-type {
@@ -109,7 +100,6 @@
 }
 
 .impact-article .description:last-of-type {
-    /* border: 1px solid green; */
     width: 60%;
     margin-block-start: 2%;
     margin-inline-start: 4%;
