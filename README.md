@@ -34,6 +34,8 @@
 &nbsp;});<br></code></p>
 
 <p>MongoDB is used to ensure persistance of user profiles and user comments. Full CRUD system is set up to allow users read, create, update and delete comments that are attached to their user ID.</p>
+<img src='./frontend/images/screenshots/comments.png'>
+
 <p>Mongoose is used for an efficient data modeling.</p>
 <p>User authorization is performed using a cookie parser, JWT and bcrypt.</p>
 
