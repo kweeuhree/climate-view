@@ -9,6 +9,7 @@ router.param('id', async (req, res, next, id) => {
     try {
         const found = await User.findById(id);
         if (found) {
+            //if user exists assign their id to userId
             req.userId = id;
             next(); // call next function
         } else { // if id doesn't exist send 404 status
@@ -30,12 +31,10 @@ router.get('/:id', userController.getUser);
 // update a user
 router.put('/:id', userController.updateUser);
 
-// create a user
-// router.post('/', userController.createUser);
-
 // delete a user
 router.delete('/:id', userController.deleteUser);
 
+//export
 module.exports = router;
 
 

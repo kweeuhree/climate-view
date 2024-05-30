@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
-
+//comment model
 const Comment = require('../models/CommentModel');
+//comment controller
 const commentController = require('../controllers/commentController');
-
-
 
 // id params
 router.param('id', async (req, res, next, id) => {
     try {
         const found = await Comment.findById(id);
         if (found) {
+            //assign id as a commentId
             req.commentId = id;
             next(); // call next function
         } else { // if id doesn't exist send 404 status
@@ -37,7 +37,7 @@ router.post('/', commentController.createComment);
 router.delete('/:id', commentController.deleteComment);
 
 
-
+//export
 module.exports = router;
 
 
