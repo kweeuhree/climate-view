@@ -4,15 +4,15 @@ import Header from '../Header';
 import './Iceberg.css'
 
 const Iceberg = () => {
-    
+    // images to pass into slider
     const imageSliderUrl = {
         leftImage: `https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2024/05/iceberg_a-83_breaks_free/26094469-6-eng-GB/Iceberg_A-83_breaks_free_pillars.jpg`,
         rightImage: `https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2024/05/thermal_image_of_a-83_iceberg/26095691-3-eng-GB/Thermal_image_of_A-83_iceberg_pillars.jpg`
     };
-
+    // flags for images
     const flags = ['Radar Image', 'Thermal Image'];
 
-    // 
+    // text to display on page
     const descriptions = {
         top: {
             beforeSpan: `The radar image on the left, 
@@ -38,12 +38,17 @@ const Iceberg = () => {
 
   return (
     <article className="iceberg-article">
+
+            {/* Header */}
             <Header header={'cryosphere'} />
+           
+           {/* main article */}
             <div className='description'>
                {descriptions.beforeImage}
             </div>
             <div className='description'>
             {descriptions.top.beforeSpan}<span>
+                {/* external links */}
                 <a 
                 href={'https://www.esa.int/Applications/Observing_the_Earth/Copernicus/Sentinel-1'}
                 target="_blank"
