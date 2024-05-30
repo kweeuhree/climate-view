@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentSection from '../../components/CommentSection/CommentSection';
+
 import './ImpactPage.css';
 
 const ImpactPage = ({loggedIn, user}) => {
@@ -38,9 +39,11 @@ const ImpactPage = ({loggedIn, user}) => {
       
      <article className='impact-article'>
 
-     <div className="description">{text.intro}</div>
-
+    <div className="sun-wrapper">
+      <div className="description">{text.intro}</div>
       <div className="description">{text.sun}</div>
+
+    </div>
 
       <div className="gases">
         {Object.values(text.gas).map((item, index) => (
