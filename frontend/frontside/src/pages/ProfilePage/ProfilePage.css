@@ -1,27 +1,19 @@
 .profile-section {
-    /* border: 1px solid purple; */
     position: relative;
 }
 
-.top-profile {
-    /* border: 1px solid green; */
-}
-
 .top-profile h1 {
-    /* border: 1px solid red; */
     margin-bottom: 10%;
 }
 
 /* middle profile */
 .middle-profile {
-    /* border: 1px solid orange; */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
 
 .profile-buttons {
-    /* border: 1px solid black; */
     width: 35%;
     height: 15vh;
     display: flex;
@@ -33,22 +25,12 @@
 }
 
 .profile-buttons > div {
-    /* border: 1px solid black; */
     width: 45%;
     margin-inline-start: 2%;
     margin-block-end: 2%;
     margin-block-start: 2%;
 }
-
-.update-name-container {
-    /* border: 1px solid blue; */
-}
-
-.update-name-container form {
-    /* border: 1px solid crimson; */
-}
-
-.update-name-container input {
+/* .update-name-container input {
     padding-inline-start: 5%;
     border: 1px solid transparent;
     background: linear-gradient(146deg, rgba(135, 138, 138, 0.116) 6%, rgba(122,122,122,0.3) 60%, rgba(112, 112, 112, 0.1) 100%);
@@ -56,7 +38,7 @@
     font-size: 1.2rem;
     height: 2rem;
     width: 90%;
-    outline: 1px solid rgba(43, 44, 44, 0.6);
+    outline: 1px solid rgba(43, 44, 44, 0.6); */
 }
 
 .consent-popup {
@@ -85,7 +67,6 @@
 }
 
 .account-days {
-    /* border: 1px solid salmon; */
     width: 30%;
     text-align: end;
     font-size: 6rem;
@@ -97,7 +78,6 @@
 }
 
 .since-joining {
-    /* border: 1px solid blue; */
     text-align: end;
     font-size: 4rem;
     padding-inline-end: 18%;
