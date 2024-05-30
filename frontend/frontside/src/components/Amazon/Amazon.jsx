@@ -1,10 +1,11 @@
 import React from 'react';
 import Header from '../Header';
+import ImageContainer from '../ImageContainer';
 import './Amazon.css';
 
 const Amazon = () => {
 
-
+    // text to display on the page
     const descriptions = {
         intro: `Forests cover nearly one-third of the land area on our planet 
         and are home to most of the world’s life on land. They are also essential 
@@ -24,16 +25,24 @@ const Amazon = () => {
 
   return (
     <article className='amazon-article'>
+
+        {/* header */}
         <Header header={'deforestation'} />
+
+        {/* main article*/}
         <div className='description'>{descriptions.intro}</div>
-       
         <div className="display-flex flex-center">
-            <div className="image-container">
-                <img src="https://eoimages.gsfc.nasa.gov/images/imagerecords/145000/145888/br163defores_tmo_amo_2019.gif" alt="Amazon timeline" />
-            </div>
+            
+            {/* image container */}
+            <ImageContainer 
+                url="https://eoimages.gsfc.nasa.gov/images/imagerecords/145000/145888/br163defores_tmo_amo_2019.gif"
+                alt={"Amazon timeline"}
+            />
+
             <div className='description'>{descriptions.beforeImage}</div>
         </div>
         <div className="description">{descriptions.afterImage}</div>
+
     </article>
   )
 }
