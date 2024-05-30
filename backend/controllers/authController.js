@@ -1,9 +1,12 @@
 const User = require('../models/UserModel');
 
 //auth
+// require bcrypt for hashing
 const bcrypt = require("bcryptjs");
+// require jwt for generating a token
 const jwt = require("jsonwebtoken");
 
+// sign up function
 const signup = async (req, res) => {
   try {
         // 1. Get Email and Password - [req.body]
@@ -26,6 +29,7 @@ const signup = async (req, res) => {
   }
   };
   
+  // log in function
   const login = async (req, res) => {
     try {
       // 1. Get email and password -[req.body]
@@ -37,9 +41,12 @@ const signup = async (req, res) => {
       // 3. Compare password with foundUser
       const passwordMatch = await bcrypt.compareSync(password, user.password);
       console.log("Password Verified");
+
+      // if passwords dont match, send back a 401 status
+
       if (!passwordMatch) return res.sendStatus(401);
+      
       // 4. Create JWT
-  
       const exp = Date.now() + 1000 * 60 * 60 * 24 * 30;
       console.log(exp);
       // ----milisec: ---> 2sec- imin-1day-30days
@@ -55,18 +62,23 @@ const signup = async (req, res) => {
         // allows only browser and server to read
         sameSite: "lax"
       });
-      res.json({user});
+
       // Cookie - data that our servers will send to browser and store in cache.
       // Cookies save information about a user's session
       // by default express doesnt read cookies off request body so u need an npm package :cookie-parser
   
       // 5. Send Response
+      res.json({user});
+
     } catch (error) {
       console.log(error);
     }
   };
 
+  // logout function
   const logout = (req, res, next) => {
+
+    //clear user sesstion
       res.clearCookie("authorization");
       res.sendStatus(200);
       console.log(`Successfully Logged Out`);
@@ -78,6 +90,8 @@ const signup = async (req, res) => {
       res.sendStatus(200);
   };
   
+
+  // export
   module.exports = {
     signup,
     login,
