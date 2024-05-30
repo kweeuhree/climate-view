@@ -1,5 +1,4 @@
 .cities-container {
-    /* border: 1px solid seagreen; */
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -7,7 +6,6 @@
 }
 
 .city-container {
-    /* border: 1px solid red; */
     flex-direction: column;
     width: 50%;
     border-radius: 0.5rem;
@@ -16,7 +14,6 @@
 
 .top-section {
     width: 100%;
-    /* border: 1px solid purple; */
     display: flex;
     align-items: center;
     justify-content: space-around;

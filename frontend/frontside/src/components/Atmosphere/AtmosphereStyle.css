@@ -52,24 +52,25 @@
 }
 
 /* keyframes */
+/* add delays to the animation */
 .animate {
     animation: move linear; 
     animation-duration: 900ms;
 }
   
-  .all-images-parent .image-parent:nth-of-type(1) {
+.all-images-parent .image-parent:nth-of-type(1) {
     animation-delay: 0000ms;
   }
   
-  .all-images-parent .image-parent:nth-of-type(2) {
+.all-images-parent .image-parent:nth-of-type(2) {
     animation-delay: 800ms;
   }
   
-  .all-images-parent .image-parent:nth-of-type(3) {
+.all-images-parent .image-parent:nth-of-type(3) {
     animation-delay: 1800ms;
   }
   
-  .all-images-parent .image-parent:nth-of-type(4) {
+.all-images-parent .image-parent:nth-of-type(4) {
     animation-delay: 2800ms;
   }
   
