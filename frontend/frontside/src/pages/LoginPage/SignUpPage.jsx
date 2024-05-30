@@ -86,7 +86,7 @@ const SignUpPage = () => {
              value={formData.email}
           />
             <input 
-                type='text' 
+                type='password' 
                 name="password" 
                 // handle change dynamically
                 onChange={handleChange} 

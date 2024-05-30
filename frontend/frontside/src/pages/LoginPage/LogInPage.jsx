@@ -68,7 +68,7 @@ const LogInPage = ({setLoggedIn, loggedIn, setUser}) => {
             />
 
             <input 
-              type='text' 
+              type='password' 
               name="password" 
                //  handle change dynamically 
               onChange={handleChange} 
