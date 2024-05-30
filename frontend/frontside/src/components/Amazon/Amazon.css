@@ -1,3 +1,4 @@
+/* override default Header spacing as this header is too long */
 .amazon-article h1 {
-    letter-spacing: 4vw;
+    letter-spacing: 4vw; 
 }
