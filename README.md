@@ -1,6 +1,6 @@
 <h1>Climate View</h1>
 
-<p>This repository contains code for a full stack application meant to provide an overview of of Earth's climate state as of 2024. The app is following an MVC(Model-View-Controller) architecture.</p>
+<p>This repository contains code for a full stack application meant to provide an overview of Earth's climate state as of 2024. The app is following an MVC(Model-View-Controller) architecture.</p>
 
 <p>Users can create an account and leave comments once logged in. The application keeps track of days since the user joined.</p>
 
