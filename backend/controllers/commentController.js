@@ -1,9 +1,9 @@
-const Comment = require('../models/CommentModel');
+const Comment = require('../models/commentModel');
 
 
 // get all comments
 const fetchAllComments = async (req, res) => {
-    //find all and send as a response
+    //find all and send status 200 and comments as a response
     const comments = await Comment.find();
     res.status(200).json({ comments: comments });
 }
