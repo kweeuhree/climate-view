@@ -33,6 +33,8 @@ body {
   /* background-image: url("https://images2.alphacoders.com/260/thumb-1920-260750.jpg"); */
   background-image: url('https://neo.gsfc.nasa.gov/archive/rgb/MYDAL2_E_AER_RA/MYDAL2_E_AER_RA_2011-09-14.PNG');
   position: relative;
+
+  overflow-x:hidden;
 }
 
 h1 {

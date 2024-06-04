@@ -10,6 +10,10 @@
     flex-direction: column;
 }
 
+.intro-article h1 {
+    letter-spacing: 3.9vw;
+  }
+
 .intro-text {
     margin-block-end: 5%;
     display: flex;

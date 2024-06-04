@@ -78,7 +78,7 @@ const Atmosphere = () => {
     ));
 
   return (
-    <article className='atmospehere-article'>
+    <article className='atmosphere-article'>
 
         {/* Header */}
         <Header header={'atmosphere'} />
