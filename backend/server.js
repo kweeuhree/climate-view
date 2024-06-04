@@ -3,7 +3,7 @@ const express = require('express');
 // app express instance
 const app = express();
 //port
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 10000;
 
 
 //requires ----------------------

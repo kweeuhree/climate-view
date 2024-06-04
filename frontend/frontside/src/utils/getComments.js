@@ -1,6 +1,6 @@
 export const getComments = async () => {
     try {
-        const response = await fetch('http://localhost:3000/comments', {
+        const response = await fetch('https://climate-view.onrender.com/comments', {
             method: 'GET',
             headers:  {
                 Accept: 'application/json',

@@ -28,7 +28,7 @@ const CommentForm = ({user, addNewComment}) => {
 
     //attempt a post request
     try{
-      const response = await fetch('http://localhost:3000/comments', {
+      const response = await fetch('https://climate-view.onrender.com/comments', {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

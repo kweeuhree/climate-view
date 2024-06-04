@@ -108,6 +108,7 @@ const HistoryPage = ({loggedIn, user}) => {
           <input type="text" name="cityFormData" onChange={handleChange} value={formData.cityFormData} placeholder="city" required={true}/>
           {/* stateRegion and country are optional */}
           <input type="text" id="stateRegion" name="stateRegion" onChange={handleChange} value={formData.stateRegion} placeholder='state or region'/>
+          {/* stateRegion and country are optional */}
           <input type="text" id="country" name="countryFormData" onChange={handleChange} value={formData.countryFormData} placeholder='country'/>
           <input type="date" name="date" onChange={handleChange} value={formData.date} required={true}/>
           <button type="submit">Compare</button>

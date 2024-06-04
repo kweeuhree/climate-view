@@ -101,7 +101,7 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
     console.log('attempting deleting profile');
     //try sending a delete request
     try {
-      const response = await fetch(`http://localhost:3000/profile/${user.id}`, {
+      const response = await fetch(`https://climate-view.onrender.com/profile/${user.id}`, {
         method: 'DELETE'
       });
     if(response.ok) {
@@ -118,7 +118,7 @@ const ProfilePage = ({loggedIn, setLoggedIn, setUser, user}) => {
     console.log('inside handleLogout');
     // try logging user out
     try {
-      const response = await fetch('http://localhost:3000/auth/logout', {
+      const response = await fetch('https://climate-view.onrender.com/auth/logout', {
         method: 'POST', 
         headers: { 'Content-Type': 'application/json' }
       });

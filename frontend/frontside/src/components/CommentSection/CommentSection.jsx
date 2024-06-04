@@ -44,7 +44,7 @@ const CommentSection = ({loggedIn, user}) => {
 
     // try requesting the update
     try {
-      const response = await fetch(`http://localhost:3000/comments/${event._id}`, {
+      const response = await fetch(`https://climate-view.onrender.com/comments/${event._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(event)
@@ -73,7 +73,7 @@ const CommentSection = ({loggedIn, user}) => {
   const handleDelete = async (id) => {
 
     //remove from database
-    const response = await fetch(`http://localhost:3000/comments/${id}`, {
+    const response = await fetch(`https://climate-view.onrender.com/comments/${id}`, {
       method: 'DELETE'
     });
     if(response.ok) {
