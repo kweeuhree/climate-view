@@ -37,6 +37,7 @@
     outline: 1px solid rgba(43, 44, 44, 0.6);
 }
 
+/* change placeholder */
 .form-container input::placeholder {
     color: white;
     font-size: 1.4rem;
@@ -46,6 +47,7 @@
     margin-top: 3%;
     width: 90%;
 }
+
 
 .font-size-2rem {
     font-size: 2rem;
