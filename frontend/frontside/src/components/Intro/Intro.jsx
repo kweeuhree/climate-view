@@ -57,10 +57,10 @@ const Intro = () => {
                 </span>
             </div>
 
-            {/* gif */}
+            {/* gif  of earth in carbon monoxide gas*/}
             <div className="gif">
                     <img 
-                            src='frontend\frontside\src\assets\carbon-earth.gif' 
+                            src='frontend/frontside/src/assets/carbon-earth.gif' 
                             alt="Earth surrounded by Carbon Monoxide gas" 
                         />
             </div>
