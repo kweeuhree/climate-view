@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Intro.css';
 import Header from '../Header';
+import earthImage from '../../assets/carbonEarth.gif';
 
 const Intro = () => {
 
@@ -60,7 +61,7 @@ const Intro = () => {
             {/* gif  of earth in carbon monoxide gas*/}
             <div className="gif">
                     <img 
-                            src='frontend/frontside/src/assets/carbon-earth.gif' 
+                            src={earthImage} 
                             alt="Earth surrounded by Carbon Monoxide gas" 
                         />
             </div>
