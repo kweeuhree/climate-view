@@ -33,11 +33,20 @@
 &nbsp;&nbsp;}<br>
 &nbsp;});<br></code></p>
 
-<p>MongoDB is used to ensure persistance of user profiles and user comments. Full CRUD system is set up to allow users read, create, update and delete comments that are attached to their user ID.</p>
-<img src='./frontend/images/screenshots/comments.png'>
-
-<p>Mongoose is used for an efficient data modeling.</p>
 <p>User authorization is performed using a cookie parser, JWT and bcrypt.</p>
+<p align="center">
+    <img src='./frontend/frontside/src/assets/atmosphereGifs/climate-login-profile.gif'>
+</p>
+<br>
+<p>Mongoose is used for an efficient data modeling.</p>
+<p>MongoDB is used to ensure persistance of user profiles and user comments. Full CRUD system is set up to allow users read, create, update and delete comments that are attached to their user ID.</p>
+<p align="center">
+    <img src='./frontend/frontside/src/assets/atmosphereGifs/climate-comment-section.gif'>
+</p>
+<br>
+
+
+
 
 <hr>
 <h3>Frontend</h3>
@@ -61,7 +70,10 @@ className={`intro-text ${loaded ? 'fade-in' : ''}`} </code><br></p>
 <code> 
 &nbsp;onMouseEnter={()=>setIsHovered(true)}<br>
 &nbsp;onMouseLeave={()=>setIsHovered(false)}</code></p>
-
+<p align="center">
+    <img src='./frontend/frontside/src/assets/atmosphereGifs/climate-intro.gif'>
+</p>
+<br>
 <p><b>Atmosphere</b> component is relying on useRef, useEffect and IntersectionObserver to track the component being scrolled into view, which consequently triggers animations within the component, clean up function ensures that we stop observing in order to prevent memory leaks:
 <br>
 <code>&nbsp;const [isInView, setIsInView] = useState(false);<br>
@@ -86,7 +98,10 @@ className={`intro-text ${loaded ? 'fade-in' : ''}`} </code><br></p>
 &nbsp;}, []);<br>
 <br>
 className={`image-parent  ${isInView ? 'animate' : ''}`}</code></p>
-
+<p align="center">
+    <img src='./frontend/frontside/src/assets/atmosphereGifs/climate-maps.gif'>
+</p>
+<br>
 <p><b>HistoryPage</b> component is using data fetched from open-meteo.com and displays cities that user picks. Application is interacting with the user via a form. State and Country parameters are made optional in order to let user pick how they want to search their location. Behind the hood, the app will capitalize user input in order to make state and country optional.
 <br> Picked city is added to a comparison container, which is also happening thorugh state of currently picked city, as well as both cities. Once cities array stops being empty, Cities component will display city/cities:
 <br>
@@ -104,7 +119,10 @@ className={`image-parent  ${isInView ? 'animate' : ''}`}</code></p>
 &nbsp;cities?.length > 0 ? ( <br>
 &nbsp;&nbsp;< Cities cities={cities} removeCity={removeCity} />
 )</code></p>
-<img src='https://github.com/kweeuhree/climate-view/blob/master/frontend/images/screenshots/history.png?raw=true'>
+<p align="center">
+    <img src='./frontend/frontside/src/assets/atmosphereGifs/climate-history.gif'>
+</p>
+<br>
 <br><br>
 <p><b>ProfilePage</b> tracks days dince joining and allows to log out and delete account.</p>
 <img src='./frontend/images/screenshots/profile.png'>
