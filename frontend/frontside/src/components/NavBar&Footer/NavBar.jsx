@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { IoMenu } from "react-icons/io5";
 import './NavBar.css';
 
 const NavBar = ({loggedIn}) => {
@@ -17,7 +18,7 @@ const NavBar = ({loggedIn}) => {
       <Link to="/profile">profile</Link>
     )
   }
-
+//if nav ul isnt visible show burger icon
 
   const signlog = () => {
     return (
@@ -35,6 +36,7 @@ const NavBar = ({loggedIn}) => {
   return (
     
     <nav>
+      <div className='burger-icon'><IoMenu /></div>
       <ul>{linksJSX}</ul>
       <div className='authcheck'>
         {/* if user is logged in show profile else signlog */}

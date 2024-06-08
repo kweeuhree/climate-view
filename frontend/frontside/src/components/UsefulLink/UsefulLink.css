@@ -1,4 +1,5 @@
-.fundraiser-container {
+@media (min-width: 1280px) {
+    .fundraiser-container {
     /* border: 1px solid rgba(148, 148, 148, 0.555); */
     background-color: rgba(250, 235, 215, 0.25);
     border-top-left-radius: 2em; 
@@ -7,6 +8,56 @@
     font-size: 1.1rem;
     transition: background-color 300ms 40ms linear;
 }
+  }
+  /* --------------------------------------end desktop---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mid-large------------------- */
+  
+  @media (min-width: 880px) and (max-width: 1280px) {
+    .fundraiser-container {
+    /* border: 1px solid rgba(148, 148, 148, 0.555); */
+    background-color: rgba(250, 235, 215, 0.25);
+    border-top-left-radius: 2em; 
+    border-top-right-radius: 2em; 
+    text-align: center;
+    font-size: 1.1rem;
+    transition: background-color 300ms 40ms linear;
+}
+  }
+  /* --------------------------------------end mid-large---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mid------------------- */
+  
+  @media (min-width: 403px) and (max-width: 880px) {
+    .fundraiser-container {
+    /* border: 1px solid rgba(148, 148, 148, 0.555); */
+    background-color: rgba(250, 235, 215, 0.25);
+    border-top-left-radius: unset; 
+    border-top-right-radius: unset; 
+    text-align: center;
+    font-size: 1.1rem;
+    transition: background-color 300ms 40ms linear;
+}
+  }
+  /* --------------------------------------end mid---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mobile------------------- */
+  
+  @media (max-width: 403px) {
+    .fundraiser-container {
+    /* border: 1px solid rgba(148, 148, 148, 0.555); */
+    background-color: rgba(250, 235, 215, 0.25);
+    border-top-left-radius: unset; 
+    border-top-right-radius: unset; 
+    text-align: center;
+    font-size: 1.1rem;
+    transition: background-color 300ms 40ms linear;
+}
+      
+  }
+  /* --------------------------------------end mobile---------------- */
+  /* ---------------------------------------------------------------- */
+
 
 .fundraiser-container:hover {
     background-color: rgba(250, 235, 215, 0.4);
