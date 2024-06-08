@@ -1,5 +1,15 @@
 @media (min-width: 1280px) {
+    .overlay {
+        z-index: 2;
+        position: absolute;
+        background-color: lime;
+        width: 100%;
+        height: 100vh;
+        display: none;
+    }
+
     .burger-icon {
+        z-index: 3;
         display: none;
         font-size: unset;
     }
@@ -35,7 +45,17 @@ ul li {
   /* --------------------------------------mid-large------------------- */
   
   @media (min-width: 880px) and (max-width: 1280px) {
+    .overlay {
+        z-index: 2;
+        position: absolute;
+        background-color: lime;
+        width: 100%;
+        height: 100vh;
+        display: none;
+    }
+
     .burger-icon {
+        z-index: 3;
         display: none;
         font-size: unset;
     }
@@ -71,7 +91,17 @@ ul li {
   /* --------------------------------------mid------------------- */
   
   @media (min-width: 403px) and (max-width: 880px) {
+    .overlay {
+        z-index: 2;
+        position: absolute;
+        background-color: lime;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+    }
+
     .burger-icon {
+        z-index: 3;
         display: flex;
         font-size: 2.5rem;
     }
@@ -107,7 +137,17 @@ ul li {
   /* --------------------------------------mobile------------------- */
   
   @media (max-width: 403px) {
+    .overlay {
+        z-index: 2;
+        position: absolute;
+        background-color: lime;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+    }
+
     .burger-icon {
+        z-index: 3;
         display: flex;
         font-size: 2rem;
     }

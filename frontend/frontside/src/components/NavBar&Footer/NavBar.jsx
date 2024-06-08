@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { IoMenu } from "react-icons/io5";
+import { IoMenu, IoCloseOutline  } from "react-icons/io5";
 import './NavBar.css';
 
 const NavBar = ({loggedIn}) => {
   
+  const [isVisible, setIsVisible] = useState(false);
+
   const links = ['dashboard', 'history', 'impact'];
 
   const linksJSX = links.map((item, index) => (
@@ -32,11 +34,22 @@ const NavBar = ({loggedIn}) => {
      </div>
     )
   }
+
+  const handleClick = () => {
+    setIsVisible(prevState => !prevState);
+  }
   
   return (
     
     <nav>
-      <div className='burger-icon'><IoMenu /></div>
+      <div className='burger-icon' onClick={handleClick}>
+        { isVisible ? (
+         <IoCloseOutline />
+        ) : (
+          <IoMenu />
+        )}
+      </div>
+      {isVisible && <div className='overlay'><ul style={{display: 'flex'}}>{linksJSX}</ul></div>}
       <ul>{linksJSX}</ul>
       <div className='authcheck'>
         {/* if user is logged in show profile else signlog */}
