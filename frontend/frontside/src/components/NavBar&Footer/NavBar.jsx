@@ -9,9 +9,17 @@ const NavBar = ({loggedIn}) => {
 
   const links = ['dashboard', 'history', 'impact'];
 
+  const handleLinkClick = () => {
+    isVisible ? setIsVisible(prevState => !prevState) : null;
+  }
+
+  const handleBurgerIconClick = () => {
+    setIsVisible(prevState => !prevState);
+  }
+
   const linksJSX = links.map((item, index) => (
     <li key={index}>
-      <Link to={`/${item}`}>{item}</Link>
+      <Link to={`/${item}`} onClick={handleLinkClick}>{item}</Link>
     </li>
   ))
 
@@ -35,18 +43,15 @@ const NavBar = ({loggedIn}) => {
     )
   }
 
-  const handleClick = () => {
-    setIsVisible(prevState => !prevState);
-  }
   
   return (
     
     <nav>
-      <div className='burger-icon' onClick={handleClick}>
+      <div className='burger-icon' onClick={handleBurgerIconClick}>
         { isVisible ? (
-         <IoCloseOutline />
+         <IoCloseOutline  className='close-icon'/>
         ) : (
-          <IoMenu />
+          <IoMenu  />
         )}
       </div>
       {isVisible && <div className='overlay'><ul style={{display: 'flex'}}>{linksJSX}</ul></div>}
