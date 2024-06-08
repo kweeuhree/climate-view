@@ -37,6 +37,7 @@ article {
   border-top: 2px solid silver;
   border-bottom: 2px solid silver;
   padding-block-end: 2%;
+  overflow: hidden;
 }
 
 .quarter-spacer {
