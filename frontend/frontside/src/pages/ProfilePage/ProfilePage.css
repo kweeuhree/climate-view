@@ -1,12 +1,5 @@
-.profile-section {
-    position: relative;
-}
-
-.top-profile h1 {
-    margin-bottom: 10%;
-}
-
-/* middle profile */
+@media (min-width: 1280px) {
+    /* middle profile */
 .middle-profile {
     display: flex;
     align-items: center;
@@ -54,6 +47,14 @@
 .pop-buttons {
     display: flex;
     gap: 5%;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.pop-buttons > button {
+    width: 43%;
+        text-align: center;
 }
 
 .account-days {
@@ -71,4 +72,273 @@
     text-align: end;
     font-size: 4rem;
     padding-inline-end: 18%;
+
+    margin-block-start: unset;
 }
+  }
+  /* --------------------------------------end desktop---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mid-large------------------- */
+  
+  @media (min-width: 880px) and (max-width: 1280px) {
+    /* middle profile */
+.middle-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.profile-buttons {
+    width: 35%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    background: linear-gradient(146deg, rgba(46, 45, 45, 0.6) 6%, rgba(122,122,122,0.3) 60%, rgba(112, 112, 112, 0.8) 100%);
+}
+
+.profile-buttons > div {
+    width: 45%;
+    margin-inline-start: 2%;
+    margin-block-end: 2%;
+    margin-block-start: 2%;
+}
+
+.consent-popup {
+    border: 1px solid slateblue;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 40vh;
+    background-color: #101930b4;
+    backdrop-filter: invert(80%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 3rem;
+    gap: 5px;
+}
+
+.pop-buttons {
+    display: flex;
+    gap: 5%;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.pop-buttons > button {
+    width: 43%;
+        text-align: center;
+}
+
+.account-days {
+    width: 35%;
+    text-align: end;
+    font-size: 6rem;
+    padding-inline-end: 10%;
+}
+
+.account-days > span {
+    font-size: 8rem;
+}
+
+.since-joining {
+    text-align: end;
+    font-size: 4rem;
+    padding-inline-end: 18%;
+
+    margin-block-start: unset;
+}
+  }
+  /* --------------------------------------end mid-large---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mid------------------- */
+  
+  @media (min-width: 403px) and (max-width: 880px) {
+    /* middle profile */
+.middle-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: solid red; */
+}
+
+.profile-buttons {
+    width: 48%;
+    height: 22vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    background: linear-gradient(146deg, rgba(46, 45, 45, 0.6) 6%, rgba(122,122,122,0.3) 60%, rgba(112, 112, 112, 0.8) 100%);
+}
+
+.profile-buttons > div {
+    width: fit-content;
+    margin-inline-start: 2%;
+    margin-block-end: 2%;
+    margin-block-start: 2%;
+}
+
+.consent-popup {
+    border: 1px solid slateblue;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 40vh;
+    background-color: #101930b4;
+    backdrop-filter: invert(80%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 3rem;
+    gap: 5px;
+}
+
+.pop-buttons {
+    display: flex;
+    gap: 3%;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.pop-buttons > button {
+    width: 42%;
+    text-align: center;
+    /* border: solid red; */
+}
+
+.account-days {
+    width: 48%;
+    text-align: end;
+    font-size: 3.8rem;
+    padding-inline-end: 3%;
+    /* border: solid salmon; */
+
+    height: 25vh;
+}
+
+.account-days > span {
+    font-size: 2.1em;
+}
+
+.since-joining {
+    text-align: end;
+    font-size: 3rem;
+    padding-inline-end: 9%;
+
+    margin-block-start: 5%;
+}
+  }
+  /* --------------------------------------end mid---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mobile------------------- */
+  
+  @media (max-width: 403px) {
+    /* middle profile */
+.middle-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.profile-buttons {
+    width: 50%;
+    height: calc(100% * 2vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 1rem;
+    background: linear-gradient(146deg, rgba(46, 45, 45, 0.6) 6%, rgba(122,122,122,0.3) 60%, rgba(112, 112, 112, 0.8) 100%);
+}
+
+.profile-buttons > div {
+    width: fit-content;
+    margin-inline-start: 2%;
+    margin-block-end: 2%;
+    margin-block-start: 2%;
+}
+
+.consent-popup {
+    border: 1px solid slateblue;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 40vh;
+    background-color: #101930b4;
+    backdrop-filter: invert(80%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 3rem;
+    gap: 5px;
+}
+
+.pop-buttons {
+    display: flex;
+    gap: 5%;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.pop-buttons > button {
+    width: 43%;
+        text-align: center;
+}
+
+.account-days {
+    width: 50%;
+    text-align: end;
+    font-size: 4rem;
+    padding-inline-end: 8%;
+}
+
+.account-days > span {
+    font-size: 7rem;
+}
+
+.since-joining {
+    text-align: end;
+    font-size: 3rem;
+    padding-inline-end: 10%;
+
+    margin-block-start: 5%;
+}
+      
+  }
+  /* --------------------------------------end mobile---------------- */
+  /* ---------------------------------------------------------------- */
+  
+  
+
+.profile-section {
+    position: relative;
+}
+
+.top-profile h1 {
+    margin-bottom: 10%;
+}
+
+
