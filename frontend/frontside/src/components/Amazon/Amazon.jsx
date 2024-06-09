@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../Header';
-import ImageContainer from '../ImageContainer';
+import ImageContainer from '../ImageContainer/ImageContainer';
 import './Amazon.css';
 
 const Amazon = () => {
@@ -33,13 +33,14 @@ const Amazon = () => {
         <div className='description'>{descriptions.intro}</div>
         <div className="display-flex flex-center">
             
+            <div className='description'>{descriptions.beforeImage}</div>
+
             {/* image container */}
             <ImageContainer 
                 url="https://eoimages.gsfc.nasa.gov/images/imagerecords/145000/145888/br163defores_tmo_amo_2019.gif"
                 alt={"Amazon timeline"}
             />
 
-            <div className='description'>{descriptions.beforeImage}</div>
         </div>
         <div className="description">{descriptions.afterImage}</div>
 

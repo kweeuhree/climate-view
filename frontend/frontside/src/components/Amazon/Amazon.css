@@ -1,4 +1,110 @@
-/* override default Header spacing as this header is too long */
-.amazon-article h1 {
+@media (min-width: 1280px) {
+    .amazon-article .image-container {
+        overflow: unset;
+    }
+
+    .amazon-article .flex-center {
+        flex-wrap: unset;
+    }
+
+    .amazon-article .flex-center .description {
+        text-align: unset;
+    }
+
+    .amazon-article img {
+        width: unset;
+
+    }
+
+    /* override default Header spacing as this header is too long */
+    .amazon-article h1 {
     letter-spacing: 4vw; 
 }
+  }
+  /* --------------------------------------end desktop---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mid-large------------------- */
+  
+  @media (min-width: 880px) and (max-width: 1280px) {
+    .amazon-article .image-container {
+        overflow: unset;
+    }
+
+    .amazon-article .flex-center {
+        flex-wrap: unset;
+    }
+
+    .amazon-article .flex-center .description {
+        text-align: unset;
+    }
+
+    .amazon-article img {
+        width: unset;
+
+    }
+
+   /* override default Header spacing as this header is too long */
+    .amazon-article h1 {
+    letter-spacing: 4vw; 
+}
+  }
+  /* --------------------------------------end mid-large---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mid------------------- */
+  
+  @media (min-width: 403px) and (max-width: 880px) {
+    .amazon-article .image-container {
+        overflow: hidden;
+    }
+
+    .amazon-article .flex-center {
+        flex-wrap: wrap;
+    }
+
+    .amazon-article .flex-center .description {
+        text-align: right;
+    }
+
+    .amazon-article img {
+        width: 100%;
+
+    }
+
+    /* override default Header spacing as this header is too long */
+    .amazon-article h1 {
+    letter-spacing: 2vw; 
+}
+  }
+  /* --------------------------------------end mid---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mobile------------------- */
+  
+  @media (max-width: 403px) {
+    .amazon-article .image-container {
+        overflow: hidden;
+    }
+
+    .amazon-article .flex-center {
+        flex-wrap: wrap;
+    }
+
+    .amazon-article .flex-center .description {
+        text-align: right;
+    }
+
+    .amazon-article img {
+        width: 100%;
+
+    }
+
+    /* override default Header spacing as this header is too long */
+    .amazon-article h1 {
+    letter-spacing: 4vw; 
+}
+      
+  }
+  /* --------------------------------------end mobile---------------- */
+  /* ---------------------------------------------------------------- */
+  
+  
+

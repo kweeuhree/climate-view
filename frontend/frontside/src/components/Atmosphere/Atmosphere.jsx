@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import Video from './Video';
 import Header from '../Header';
-import ImageContainer from '../ImageContainer';
+import ImageContainer from '../ImageContainer/ImageContainer';
 import './AtmosphereStyle.css';
 //map images
 import image15 from '../../assets/atmosphereImages/image15.png';
