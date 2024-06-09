@@ -1,4 +1,5 @@
-#root {
+@media (min-width: 1280px) {
+  #root {
   width: 100%;
   max-width: 1280px;
   min-height: 95vh;
@@ -12,6 +13,74 @@
   justify-content: space-between;
   text-align: center;
 }
+}
+/* --------------------------------------end desktop---------------- */
+/* ---------------------------------------------------------------- */
+/* --------------------------------------mid-large------------------- */
+
+@media (min-width: 880px) and (max-width: 1280px) {
+  #root {
+  width: 100%;
+  max-width: 1280px;
+  min-height: 95vh;
+  background-color: rgba(173, 177, 179, 0.61);
+  backdrop-filter: blur(4px) brightness(0.7);
+  box-shadow: 4px 3px 14px 15px rgba(255,255,255,0.4);
+  border-radius: 2em;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+}
+/* --------------------------------------end mid-large---------------- */
+/* ---------------------------------------------------------------- */
+/* --------------------------------------mid------------------- */
+
+@media (min-width: 403px) and (max-width: 880px) {
+  #root {
+  width: 100%;
+  max-width: 1280px;
+  min-height: 95vh;
+  background-color: rgba(173, 177, 179, 0.61);
+  backdrop-filter: blur(4px) brightness(0.7);
+  box-shadow: 4px 3px 14px 15px rgba(255,255,255,0.4);
+  border-radius: unset;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+}
+/* --------------------------------------end mid---------------- */
+/* ---------------------------------------------------------------- */
+/* --------------------------------------mobile------------------- */
+
+@media (max-width: 403px) {
+  #root {
+  width: 100%;
+  max-width: 1280px;
+  min-height: 95vh;
+  background-color: rgba(173, 177, 179, 0.61);
+  backdrop-filter: blur(4px) brightness(0.7);
+  box-shadow: 4px 3px 14px 15px rgba(255,255,255,0.4);
+  border-radius: unset;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+    
+}
+/* --------------------------------------end mobile---------------- */
+/* ---------------------------------------------------------------- */
+
+
+
+
 
 /* no access message */
 .no-access-message {
