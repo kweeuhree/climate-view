@@ -116,7 +116,7 @@
     background-repeat: no-repeat;
     background-size: contain; 
     width: 100%;
-    height: 40vh;
+    height: 37vh;
     position: relative;
     z-index: 1;
 }
@@ -128,7 +128,7 @@
 
 /* override default fixed height for images */
 [data-testid="container"] img {
-    height: fit-content !important;
+    height: 100% !important;
 }
 
 /* flags */

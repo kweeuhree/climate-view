@@ -1,8 +1,14 @@
-.ocean-article {
-    min-height: fit-content;
-}
+@media (min-width: 1280px) {
 
-.ocean-slider-context {
+    .ocean-article .image-slider-container {
+        height: unset;
+    }
+
+    .ocean-article .quarter-spacer {
+        height: unset;
+    }
+
+    .ocean-slider-context {
     display: flex;
     justify-content: end;
     min-height: fit-content;
@@ -18,3 +24,110 @@
     padding-block-start: 2%;
     padding-block-end: 10%;
 }
+  }
+  /* --------------------------------------end desktop---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mid-large------------------- */
+  
+  @media (min-width: 880px) and (max-width: 1280px) {
+
+    .ocean-article .image-slider-container {
+        height: unset;
+    }
+
+    .ocean-article .quarter-spacer {
+        height: unset;
+    }
+
+    .ocean-slider-context {
+    display: flex;
+    justify-content: end;
+    min-height: fit-content;
+}
+
+.ocean-slider-context div {
+    display: flex;
+    width: 65%;
+    font-size: 2.1rem;
+    text-align: right;
+    height: 13rem;
+    min-height: fit-content;
+    padding-block-start: 2%;
+    padding-block-end: 10%;
+}
+  }
+  /* --------------------------------------end mid-large---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mid------------------- */
+  
+  @media (min-width: 403px) and (max-width: 880px) {
+
+    .ocean-article .image-slider-container {
+        height: 33vh;
+    }
+
+    .ocean-article .quarter-spacer {
+        height: 0;
+    }
+
+    .ocean-slider-context {
+    display: flex;
+    justify-content: end;
+    min-height: fit-content;
+}
+
+.ocean-slider-context div {
+    display: flex;
+    width: 95%;
+    font-size: 1.5rem;
+    text-align: right;
+    height: auto;
+    min-height: fit-content;
+    padding-block-start: 3%;
+    padding-block-end: 5%;
+}
+  }
+  /* --------------------------------------end mid---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mobile------------------- */
+  
+  @media (max-width: 403px) {
+
+    .ocean-article .image-slider-container {
+        height: 33vh;
+    }
+
+    .ocean-article .quarter-spacer {
+        height: 0;
+    }
+
+    .ocean-slider-context {
+    display: flex;
+    justify-content: end;
+    min-height: fit-content;
+}
+
+.ocean-slider-context div {
+    display: flex;
+    width: 95%;
+    font-size: 1.5rem;
+    text-align: right;
+    height: auto;
+    min-height: fit-content;
+    padding-block-start: 3%;
+    padding-block-end: 5%;
+}
+      
+  }
+  /* --------------------------------------end mobile---------------- */
+  /* ---------------------------------------------------------------- */
+  
+  
+
+.ocean-article {
+    min-height: fit-content;
+}
+
+
+
+
