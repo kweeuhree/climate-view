@@ -5,7 +5,7 @@
     place-items: center center;
     height: 40vh;
     gap: 1vh;
-    /* animation: ripple-inset 6s 70ms linear infinite; /* Apply the animation to the container */
+    /* animation: ripple-inset 6s 70ms linear infinite;  */
     transition: all 0.7s ease; 
 } 
 
@@ -17,7 +17,6 @@
     place-items: center center;
     flex-direction: column;
     gap: 1vh;
-    animation: ripple 7s 60ms linear infinite;
     /* transition: all 0.7s ease; */
 }
 
@@ -44,7 +43,7 @@
 
 .sign-up h1, .log-in h1 {
     position: relative;    
-    z-index:4;
+    z-index:1;
 }
 
 .sign-up h1 img {

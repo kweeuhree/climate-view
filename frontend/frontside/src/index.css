@@ -1,3 +1,41 @@
+@media (min-width: 1280px) {
+  body { 
+      min-height: 100vh; 
+   }
+}
+/* --------------------------------------end desktop---------------- */
+/* ---------------------------------------------------------------- */
+/* --------------------------------------mid-large------------------- */
+
+@media (min-width: 880px) and (max-width: 1280px) {
+  body { 
+      min-height: 100vh; 
+   }
+}
+/* --------------------------------------end mid-large---------------- */
+/* ---------------------------------------------------------------- */
+/* --------------------------------------mid------------------- */
+
+@media (min-width: 403px) and (max-width: 880px) {
+  body { 
+      min-height: unset; 
+   }
+}
+/* --------------------------------------end mid---------------- */
+/* ---------------------------------------------------------------- */
+/* --------------------------------------mobile------------------- */
+
+@media (max-width: 403px) {
+  body { 
+      min-height: unset; 
+   }
+    
+}
+/* --------------------------------------end mobile---------------- */
+/* ---------------------------------------------------------------- */
+
+
+
 :root {
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   font-family: "Nunito Sans", sans-serif;
@@ -28,7 +66,6 @@ body {
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
   /* border: 1px solid yellow; */
   /* background-image: url("https://images2.alphacoders.com/260/thumb-1920-260750.jpg"); */
   background-image: url('https://neo.gsfc.nasa.gov/archive/rgb/MYDAL2_E_AER_RA/MYDAL2_E_AER_RA_2011-09-14.PNG');
