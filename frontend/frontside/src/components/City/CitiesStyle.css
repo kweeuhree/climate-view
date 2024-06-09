@@ -1,15 +1,106 @@
-.cities-container {
+@media (min-width: 1280px) {
+    .cities-container {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
+    margin-block-start: unset;
 }
+
+.date-temp div:first-child {
+    font-size: unset;
+}
+
+.date-temp {
+    gap: 4vw;
+    font-size: 1.5rem;
+    flex-wrap: unset;
+}
+  }
+  /* --------------------------------------end desktop---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mid-large------------------- */
+  
+  @media (min-width: 880px) and (max-width: 1280px) {
+    .cities-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-block-start: unset;
+}
+
+.date-temp div:first-child {
+    font-size: unset;
+}
+
+.date-temp {
+    gap: 4vw;
+    font-size: 1.5rem;
+    flex-wrap: unset;
+}
+  }
+  /* --------------------------------------end mid-large---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mid------------------- */
+  
+  @media (min-width: 403px) and (max-width: 880px) {
+    .cities-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    /* border: 1px solid orange; */
+    margin-block-start: 5%;
+}
+
+.date-temp div:first-child {
+    font-size: 1rem;
+}
+
+.date-temp {
+    gap: 4vw;
+    font-size: 1.5rem;
+    /* border: 1px solid white; */
+    flex-wrap: wrap;
+}
+  }
+  /* --------------------------------------end mid---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mobile------------------- */
+  
+  @media (max-width: 403px) {
+    .cities-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    /* border: 1px solid orange; */
+    margin-block-start: 5%;
+}
+
+.date-temp div:first-child {
+    font-size: 1rem;
+}
+
+.date-temp {
+    gap: 4vw;
+    font-size: 1.5rem;
+    /* border: 1px solid white; */
+    flex-wrap: wrap;
+}
+      
+  }
+  /* --------------------------------------end mobile---------------- */
+  /* ---------------------------------------------------------------- */
+    
 
 .city-container {
     flex-direction: column;
-    width: 50%;
+    width: 48%;
     border-radius: 0.5rem;
     background: linear-gradient(146deg, rgba(46, 45, 45, 0.5) 6%, rgba(122,122,122,0.4) 60%, rgba(112, 112, 112, 0.5) 100%);
+    /* border: 1px solid blue; */
 }
 
 .top-section {
@@ -17,11 +108,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-}
-
-.date-temp {
-    gap: 4vw;
-    font-size: 1.5rem;
+    /* border: 1px solid red; */
 }
 
 .big-button {
