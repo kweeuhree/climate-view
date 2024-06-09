@@ -87,11 +87,11 @@ const Atmosphere = () => {
         <div className="map-image-container">
 
           {/* set up images parent reference and display images */}
-           <div ref={imagesParentRef} className={`all-images-parent`}>{imagesJSX}</div>
+           <div ref={imagesParentRef} className='all-images-parent'>{imagesJSX}</div>
             <div className="description temp-context">
-                {descriptions.context} 
+                <div className='width-narrow'>{descriptions.context} </div>
                 <br /><br />
-                {descriptions.tempContext}
+                <div>{descriptions.tempContext}</div>
             </div>
         </div>
 
