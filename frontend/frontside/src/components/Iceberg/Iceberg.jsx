@@ -71,7 +71,15 @@ const Iceberg = () => {
             {/* image slider context and description */}
             <div className='image-slider-context'>
                 <div className="description margin-bottom">
-                    {descriptions.context[0]}<br />{descriptions.context[1]}
+                    <div>
+                        {descriptions.context[0]}
+                    </div>
+
+                <br />
+                
+                    <div>
+                        {descriptions.context[1]}
+                    </div>
                 </div>
                 <div>
                     <img 

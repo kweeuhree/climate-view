@@ -3,13 +3,4 @@
     width: 100%;
 }
 
-.image-slider-container {
-    border-radius: 0.2rem;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain; 
-    width: 100%;
-    height: 77vh;
-    position: relative;
-    z-index: 1;
-}
+

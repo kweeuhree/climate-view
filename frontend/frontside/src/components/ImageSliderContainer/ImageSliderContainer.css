@@ -1,4 +1,5 @@
-/* override default fixed height */
+@media (min-width: 1280px) {
+    /* override default fixed height */
 [data-testid="container"] {
     height: 80vh !important;
 }
@@ -19,6 +20,15 @@
     transition: opacity 500ms 100ms ease, transform 200ms linear;
 }
 
+.flag {
+    font-size:1.1rem;
+    font-weight: 500;
+    width: 6vw;
+    border: 1px solid grey;
+    border-radius: 0.2vw;
+    background-color: rgba(34, 39, 39, 0.85);
+}
+
 .left { 
     /* transform: translateX(-50%); */
 }
@@ -31,6 +41,45 @@
 .slider {
     z-index: 6;
 }
+  }
+  /* --------------------------------------end desktop---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mid-large------------------- */
+  
+  @media (min-width: 880px) and (max-width: 1280px) {
+
+    .image-slider-container {
+    margin-block-start: 5%;
+    border-radius: 0.2rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; 
+    width: 100%;
+    height: 77vh;
+    position: relative;
+    z-index: 1;
+}
+
+    /* override default fixed height */
+[data-testid="container"] {
+    height: 80vh !important;
+}
+
+/* override default fixed height for images */
+[data-testid="container"] img {
+    height: fit-content !important;
+}
+
+/* flags */
+.flag-container {
+    display: flex;
+    position: absolute;
+    z-index: 99;
+    top:45%;
+    opacity: 0;
+    transform: unset;
+    transition: opacity 500ms 100ms ease, transform 200ms linear;
+}
 
 .flag {
     font-size:1.1rem;
@@ -40,6 +89,146 @@
     border-radius: 0.2vw;
     background-color: rgba(34, 39, 39, 0.85);
 }
+
+.left { 
+    /* transform: translateX(-50%); */
+}
+
+.right {
+    right: 0;
+    /* transform: translateX(100%); */
+}
+
+.slider {
+    z-index: 6;
+}
+  }
+  /* --------------------------------------end mid-large---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mid------------------- */
+  
+  @media (min-width: 403px) and (max-width: 880px) {
+
+    .image-slider-container {
+    margin-block-start: 5%;
+    border-radius: 0.2rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; 
+    width: 100%;
+    height: 40vh;
+    position: relative;
+    z-index: 1;
+}
+
+    /* override default fixed height */
+[data-testid="container"] {
+    height: unset;
+}
+
+/* override default fixed height for images */
+[data-testid="container"] img {
+    height: fit-content !important;
+}
+
+/* flags */
+.flag-container {
+    display: flex;
+    position: absolute;
+    z-index: 99;
+    top:25%;
+    opacity: 0;
+    transform: unset;
+    transition: opacity 500ms 100ms ease, transform 200ms linear;
+}
+
+.flag {
+    font-size:1.1rem;
+    font-weight: 500;
+    width: 18vw;
+    border: 1px solid grey;
+    border-radius: 0.2vw;
+    background-color: rgba(34, 39, 39, 0.85);
+}
+
+.left { 
+    /* transform: translateX(-50%); */
+}
+
+.right {
+    right: 0;
+    /* transform: translateX(100%); */
+}
+
+.slider {
+    z-index: 6;
+}
+  }
+  /* --------------------------------------end mid---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mobile------------------- */
+  
+  @media (max-width: 403px) {
+
+    .image-slider-container {
+    margin-block-start: unset;
+    border-radius: 0.2rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; 
+    width: 100%;
+    height: 40vh;
+    position: relative;
+    z-index: 1;
+}
+
+    /* override default fixed height */
+[data-testid="container"] {
+    height: 80vh !important;
+}
+
+/* override default fixed height for images */
+[data-testid="container"] img {
+    height: fit-content !important;
+}
+
+/* flags */
+.flag-container {
+    display: flex;
+    position: absolute;
+    z-index: 99;
+    top:25%;
+    opacity: 0;
+    transform: unset;
+    transition: opacity 500ms 100ms ease, transform 200ms linear;
+}
+
+.flag {
+    font-size:1.1rem;
+    font-weight: 500;
+    width: 18vw;
+    border: 1px solid grey;
+    border-radius: 0.2vw;
+    background-color: rgba(34, 39, 39, 0.85);
+}
+
+.left { 
+    /* transform: translateX(-50%); */
+}
+
+.right {
+    right: 0;
+    /* transform: translateX(100%); */
+}
+
+.slider {
+    z-index: 6;
+}
+      
+  }
+  /* --------------------------------------end mobile---------------- */
+  /* ---------------------------------------------------------------- */
+  
 
 .soft-appear {
     opacity: 1;
