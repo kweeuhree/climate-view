@@ -19,6 +19,7 @@
     /* override default Header spacing as this header is too long */
     .amazon-article h1 {
     letter-spacing: 4vw; 
+    margin-inline-start: 2%;
 }
   }
   /* --------------------------------------end desktop---------------- */
@@ -73,6 +74,7 @@
     /* override default Header spacing as this header is too long */
     .amazon-article h1 {
     letter-spacing: 2vw; 
+    margin-inline-start: unset;
 }
   }
   /* --------------------------------------end mid---------------- */
@@ -100,6 +102,7 @@
     /* override default Header spacing as this header is too long */
     .amazon-article h1 {
     letter-spacing: 4vw; 
+    margin-inline-start: unset;
 }
       
   }

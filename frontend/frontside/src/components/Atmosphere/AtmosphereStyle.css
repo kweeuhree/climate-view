@@ -1,7 +1,7 @@
 @media (min-width: 1280px) {
 
   .atmosphere-article h1 {
-    letter-spacing: unset;
+    margin-inline-start: 5%;
   }
 
   .map-image-container {
@@ -78,7 +78,7 @@
 @media (min-width: 880px) and (max-width: 1280px) {
 
   .atmosphere-article h1 {
-    letter-spacing: unset;
+    margin-inline-start: 5%;
   }
 
   .map-image-container {
@@ -156,6 +156,7 @@
 
   .atmosphere-article h1 {
     letter-spacing: 3.4vw;
+    margin-inline-start: unset;
   }
 
   .map-image-container {
@@ -234,6 +235,7 @@
 
   .atmosphere-article h1 {
     letter-spacing: 3.4vw;
+    margin-inline-start: unset;
   }
 
   .map-image-container {

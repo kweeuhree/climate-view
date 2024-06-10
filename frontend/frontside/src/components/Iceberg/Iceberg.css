@@ -1,8 +1,8 @@
 @media (min-width: 1280px) {
 
-    .iceberg-article {
-        letter-spacing: unset;
-    }
+    .iceberg-article h1 {
+        margin-inline-start: 5%;
+      }
 
     .image-slider-context {
     position: unset;
@@ -35,8 +35,8 @@
   
   @media (min-width: 880px) and (max-width: 1280px) {
 
-    .iceberg-article {
-        letter-spacing: unset;
+    .iceberg-article h1 {
+        margin-inline-start: unset;
     }
 
     .image-slider-context {
@@ -72,6 +72,7 @@
 
     .iceberg-article h1{
         letter-spacing: 4vw;
+        margin-inline-start: unset;
     }
 
     .image-slider-context {
@@ -107,6 +108,7 @@
 
     .iceberg-article {
         letter-spacing: 4vw;
+        margin-inline-start: unset;
     }
 
     .image-slider-context {

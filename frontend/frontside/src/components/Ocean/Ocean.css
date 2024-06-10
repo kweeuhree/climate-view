@@ -1,5 +1,9 @@
 @media (min-width: 1280px) {
 
+    .ocean-article h1 {
+        margin-inline-start: 5%;
+    }
+
     .ocean-article .image-slider-container {
         height: unset;
     }
@@ -39,6 +43,10 @@
         height: unset;
     }
 
+    .ocean-article h1 {
+        margin-inline-start: unset;
+    }
+
     .ocean-slider-context {
     display: flex;
     justify-content: end;
@@ -70,6 +78,10 @@
         height: 0;
     }
 
+    .ocean-article h1 {
+        margin-inline-start: unset;
+    }
+
     .ocean-slider-context {
     display: flex;
     justify-content: end;
@@ -99,6 +111,10 @@
 
     .ocean-article .quarter-spacer {
         height: 0;
+    }
+
+    .ocean-article h1 {
+        margin-inline-start: unset;
     }
 
     .ocean-slider-context {
