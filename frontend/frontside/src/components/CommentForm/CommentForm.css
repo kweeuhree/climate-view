@@ -1,4 +1,5 @@
-.comment-container {
+@media (min-width: 1280px) {
+    .comment-container {
     /* border: 1px solid red; */
     display: flex;
     width: 100%;
@@ -30,4 +31,124 @@
     width: 70%;
     outline: 1px solid rgba(43, 44, 44, 0.6);
 }
+  }
+  /* --------------------------------------end desktop---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mid-large------------------- */
+  
+  @media (min-width: 880px) and (max-width: 1280px) {
+    .comment-container {
+    /* border: 1px solid red; */
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: end;
+}
+
+.comment-container form {
+    /* border: 1px solid green; */
+    box-shadow: 8px 10px 20px 0px rgba(228, 225, 216, 0.31);
+    margin-right: 10%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    gap: 3%;
+    border-radius: 3em;
+    background: linear-gradient(146deg, rgba(105, 104, 104, 0.6) 6%, rgba(122,122,122,0.3) 60%, rgba(112, 112, 112, 0.1) 100%);
+}
+
+.comment-container textarea {
+    padding-inline-start: 5%;
+    border: 1px solid transparent;
+    background: linear-gradient(146deg, rgba(135, 138, 138, 0.116) 6%, rgba(122,122,122,0.3) 60%, rgba(112, 112, 112, 0.1) 100%);
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    height: 5vh;
+    width: 70%;
+    outline: 1px solid rgba(43, 44, 44, 0.6);
+}
+  }
+  /* --------------------------------------end mid-large---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mid------------------- */
+  
+  @media (min-width: 403px) and (max-width: 880px) {
+    .comment-container {
+    /* border: 1px solid red; */
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.comment-container form {
+    box-shadow: 8px 10px 20px 0px rgba(228, 225, 216, 0.31);
+    margin-right: 0%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    gap: 2%;
+    border-radius: 1em;
+    background: linear-gradient(146deg, rgba(105, 104, 104, 0.6) 6%, rgba(122,122,122,0.3) 60%, rgba(112, 112, 112, 0.1) 100%);
+}
+
+.comment-container textarea {
+    /* border: solid blue; */
+    padding-inline-start: 0%;
+    border: 1px solid transparent;
+    background: linear-gradient(146deg, rgba(135, 138, 138, 0.116) 6%, rgba(122,122,122,0.3) 60%, rgba(112, 112, 112, 0.1) 100%);
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    height: 5vh;
+    width: 70%;
+    outline: 1px solid rgba(43, 44, 44, 0.6);
+}
+  }
+  /* --------------------------------------end mid---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mobile------------------- */
+  
+  @media (max-width: 403px) {
+    .comment-container {
+        /* border: 1px solid red; */
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .comment-container form {
+        box-shadow: 8px 10px 20px 0px rgba(228, 225, 216, 0.31);
+        margin-right: 0%;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10vh;
+        gap: 2%;
+        border-radius: 1em;
+        background: linear-gradient(146deg, rgba(105, 104, 104, 0.6) 6%, rgba(122,122,122,0.3) 60%, rgba(112, 112, 112, 0.1) 100%);
+    }
+    
+    .comment-container textarea {
+        /* border: solid blue; */
+        padding-inline-start: 0%;
+        border: 1px solid transparent;
+        background: linear-gradient(146deg, rgba(135, 138, 138, 0.116) 6%, rgba(122,122,122,0.3) 60%, rgba(112, 112, 112, 0.1) 100%);
+        border-radius: 0.5rem;
+        font-size: 1.2rem;
+        height: 5vh;
+        width: 70%;
+        outline: 1px solid rgba(43, 44, 44, 0.6);
+    }
+      
+  }
+  /* --------------------------------------end mobile---------------- */
+  /* ---------------------------------------------------------------- */
+  
+
 
