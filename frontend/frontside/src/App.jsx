@@ -34,7 +34,7 @@ function App() {
         <UsefulLink />
 
       {/* navigation bar */}
-        <NavBar loggedIn={loggedIn}/>
+        <NavBar loggedIn={loggedIn} type={'burger'} />
       </div>
 
         {/* routes */}
@@ -49,7 +49,7 @@ function App() {
         </Routes>
 
         {/* footer (navigation bar) */}
-      <Footer loggedIn={loggedIn} />
+      <Footer loggedIn={loggedIn} type={'toTop'} />
     </>
   )
 }

@@ -55,7 +55,7 @@ const CommentForm = ({user, addNewComment}) => {
             type='text'
             name='body'
             //limit number of characters to 100
-            maxlength='100'
+            maxLength='100'
             // handle change dynamically
             onChange={handleChange}
             value={formData.body}

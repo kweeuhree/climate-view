@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { IoMenu, IoCloseOutline  } from "react-icons/io5";
 import './NavBar.css';
+import NavIcon from '../NavIcon/NavIcon';
 
-const NavBar = ({loggedIn}) => {
+const NavBar = ({loggedIn, type}) => {
   
   const [isVisible, setIsVisible] = useState(false);
 
@@ -42,24 +42,32 @@ const NavBar = ({loggedIn}) => {
      </div>
     )
   }
-
   
   return (
     
     <nav>
-      <div className='burger-icon' onClick={handleBurgerIconClick}>
-        { isVisible ? (
-         <IoCloseOutline  className='close-icon'/>
-        ) : (
-          <IoMenu  />
-        )}
-      </div>
-      {isVisible && <div className='overlay'><ul style={{display: 'flex'}}>{linksJSX}</ul></div>}
+
+     <NavIcon 
+      type={type} 
+      isVisible={isVisible} 
+      handleBurgerIconClick={handleBurgerIconClick}
+      />
+
+      {isVisible && 
+        <div className='overlay'>
+          <ul style={{display: 'flex'}}>
+            {linksJSX}
+          </ul>
+        </div>
+      }
+
       <ul>{linksJSX}</ul>
+
       <div className='authcheck'>
         {/* if user is logged in show profile else signlog */}
         {loggedIn ? profile() : signlog()}
       </div>
+
     </nav>
   )
 }
