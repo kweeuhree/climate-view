@@ -1,0 +1,88 @@
+@media (min-width: 1280px) {
+    .close-icon {
+        position: absolute;
+        right: 5%;
+        top: 5%;
+
+    }
+
+    .burger-icon {
+        display: none;
+        font-size: unset;
+    }
+  }
+  /* --------------------------------------end desktop---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mid-large------------------- */
+  
+  @media (min-width: 880px) and (max-width: 1280px) {
+    .close-icon {
+        position: absolute;
+        right: 5%;
+        top: 5%;
+
+    }
+
+    .burger-icon {
+        display: none;
+        font-size: unset;
+    }
+  }
+  /* --------------------------------------end mid-large---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mid------------------- */
+  
+  @media (min-width: 403px) and (max-width: 880px) {
+    .close-icon {
+        position: absolute;
+        right: 10%;
+        top: 50%;
+    }
+
+    .burger-icon {
+        display: flex;
+        font-size: 2.5rem;
+    }
+  }
+  /* --------------------------------------end mid---------------- */
+  /* ---------------------------------------------------------------- */
+  /* --------------------------------------mobile------------------- */
+  
+  @media (max-width: 403px) {
+    .close-icon {
+        position: absolute;
+        right: 5%;
+        top: 5%;
+
+    }
+
+    .burger-icon {
+        display: flex;
+        font-size: 2rem;
+    }
+      
+  }
+  /* --------------------------------------end mobile---------------- */
+  /* ---------------------------------------------------------------- */
+  
+  .close-icon {
+    font-size: 6rem;
+    align-self: flex-end;
+  }
+
+  .burger-icon {
+    z-index: 3;
+  }
+
+  .rotate90deg {
+    background-color: rgba(63, 60, 60, 0.199);
+    border: solid rgba(0, 0, 0, 0.164);
+    border-radius: 50%;
+    filter:drop-shadow(10px 10px 13px rgba(0,0,0,0.65));
+    transform: rotate(90deg);
+    transition: all smooth;
+  }
+
+  .rotate90deg:active {
+    transform: scale(0.9);
+  }
