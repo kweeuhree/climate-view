@@ -1,8 +1,12 @@
 import React from 'react';
 import { IoMenu, IoCloseOutline, IoCaretBackCircle } from "react-icons/io5";
+import { useLocation } from 'react-router-dom';
 import './NavIconStyle.css';
 
 const NavIcon = ({type, isVisible, handleBurgerIconClick}) => {
+
+    // check current path
+    const location = useLocation();
 
     // on click of to top button
     const handleClick = () => {
@@ -40,7 +44,23 @@ const NavIcon = ({type, isVisible, handleBurgerIconClick}) => {
         )
     }
 
-  return  type === 'burger' ? burgerIcon() : toTopIcon();
+    // 
+    const getIcon = () => {
+        // list of paths where no footer icon is needed
+        const noHomeIconPaths = ['/log-in', '/sign-up', 'profile'];
+
+        // if burger icon is specified
+        if(type) {
+            // display burger icon
+            return burgerIcon();
+        } else {
+            // if burger icon isnt specified, check path, display Home button accordingly
+            return noHomeIconPaths.includes(location.pathname) ? null : toTopIcon();
+        }
+     } 
+
+    // main function ----------------------------
+  return getIcon();
 }
 
 export default NavIcon;

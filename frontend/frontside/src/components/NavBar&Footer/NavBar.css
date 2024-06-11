@@ -55,22 +55,6 @@
         display: none;
     }
 
-    .close-icon {
-        font-size: 6rem;
-        align-self: flex-end;
-        position: absolute;
-        right: 5%;
-        top: 5%;
-
-    }
-
-    .burger-icon {
-        z-index: 3;
-        display: none;
-        font-size: unset;
-        transition: all smooth;
-    }
-
 
     nav {
         position: relative;
@@ -116,23 +100,6 @@
         height: 100vh;
         display: flex;
     }
-
-    .close-icon {
-        font-size: 6rem;
-        align-self: flex-end;
-        position: absolute;
-        right: 10%;
-        top: 50%;
-
-    }
-
-    .burger-icon {
-        z-index: 3;
-        display: flex;
-        font-size: 2.5rem;
-        transition: all smooth;
-    }
-
 
         nav {
         position: relative;
@@ -180,23 +147,6 @@
         height: 100vh;
         display: flex;
     }
-
-    .close-icon {
-        font-size: 6rem;
-        align-self: flex-end;
-        position: absolute;
-        right: 5%;
-        top: 5%;
-
-    }
-
-    .burger-icon {
-        z-index: 3;
-        display: flex;
-        font-size: 2rem;
-        transition: all smooth;
-    }
-
 
     nav {
         position: relative;
